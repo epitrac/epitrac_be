@@ -1,3 +1,6 @@
+<div align="center">
+  <h1>Epitrac API</h1>
+</div>
 
 ## Table of Contents
 - [Project Overview](#project-overview)
@@ -10,7 +13,7 @@
 
 
 ## Project Overview
-This repo is the Back End part of a project built by students at [Turing School of Software and Design](https://turing.edu/). You can find the Front End repo [Here](https://github.com/epitrac/epitrac_fe)
+This repo is the Back End part of a project built by students at [Turing School of Software and Design](https://turing.edu/). You can find the Front End repo [Here](https://github.com/epitrac/epitrac_fe).
 
 
 ## Learning Goals
@@ -49,12 +52,12 @@ This repo is the Back End part of a project built by students at [Turing School 
       <a href="https://www.linkedin.com/in/madeline-mauser-644239245/">LinkedIn</a>
     </td>
     <td>
-      <a href="https://github.com/DarbySmith">GitHub</a><br>
-      <a href="https://www.linkedin.com/in/darby-m-smith/">LinkedIn</a>
-    </td>
-    <td>
       <a href="https://github.com/eport01">GitHub</a><br>
       <a href="https://www.linkedin.com/in/emily-port-3ab6389b/">LinkedIn</a>
+    </td>
+    <td>
+    <a href="https://github.com/DarbySmith">GitHub</a><br>
+    <a href="https://www.linkedin.com/in/darby-m-smith/">LinkedIn</a>
     </td>
     <td>
       <a href="https://github.com/willjw2">GitHub</a><br>
@@ -74,3 +77,7 @@ This repo is the Back End part of a project built by students at [Turing School 
 - faraday
 - faker
 - factorybot
+
+## Known Issues/Future Goals
+Future features could include:
+- WIP
