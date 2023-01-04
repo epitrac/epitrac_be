@@ -9,10 +9,10 @@ RSpec.describe DiseaseCase, :vcr, type: :poros do
       disease = diseases.first 
 
       expect(disease).to be_an_instance_of DiseaseCase
-      expect(disease.current_week).to be_a String 
+      expect(disease.current_week).to be_an Integer 
       expect(disease.state).to be_a String 
       expect(disease.year).to be_a String 
-      expect(disease.geocode).to be_a Hash  
+      expect(disease.coordinates).to be_an Array  
 
       
     end
