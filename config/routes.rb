@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   namespace :api do 
     namespace :v1 do 
-      resources :disease_cases 
+      resources :disease_cases
       resources :articles 
     end
   end
