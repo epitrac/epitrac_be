@@ -7,5 +7,7 @@ class ArticleSerializer
               :date,
               :isbn_issn,
               :keywords,
-              :abstract
+              :abstract,
+              :url,
+              :doi 
 end

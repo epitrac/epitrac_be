@@ -1,8 +1,4 @@
 class ArticleService 
-  # def initialize(disease)
-  #   @disease = @disease_case.disease 
-  # end
-  # https://data.cdc.gov/resource/biid-68vb.json?$where=title like '%25anthrax%25'
   def self.conn 
     Faraday.new(url: "https://data.cdc.gov/resource/biid-68vb.json" )
   end

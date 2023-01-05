@@ -6,7 +6,9 @@ class Article
               :date,
               :isbn_issn,
               :keywords,
-              :abstract
+              :abstract,
+              :url,
+              :doi 
 
 
   def initialize(attributes)
@@ -18,5 +20,8 @@ class Article
     @isbn_issn = attributes[:isbn_issn]
     @keywords = attributes[:keywords]
     @abstract = attributes[:abstract]
+    @url = attributes[:url]
+    @doi = attributes[:doi]
+
   end
 end
