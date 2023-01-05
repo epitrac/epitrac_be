@@ -1,5 +1,5 @@
 class DiseaseCase
-  attr_reader :state, :year, :current_week, :disease, :current_week_cases, :cumulative_current, :cumulative_last, :coordinates
+  attr_reader :state, :year, :current_week, :disease, :current_week_cases, :cumulative_current, :cumulative_last, :coordinates, :id
 
   def initialize(attributes, current_week_cases = 0, cumulative_current = nil, cumulative_last = nil, coordinates = nil)
     @state = attributes[:states]
@@ -10,5 +10,10 @@ class DiseaseCase
     @cumulative_current = attributes[:m3]&.to_i
     @cumulative_last = attributes[:m4]&.to_i
     @coordinates = attributes[:geocode][:coordinates]
+    @id = attributes[:sort_order]
+  end
+
+  def self.all
+    ObjectSpace.each_object(self).to_a
   end
 end
