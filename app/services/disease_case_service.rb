@@ -7,7 +7,7 @@ class DiseaseCaseService
     JSON.parse(conn.get(url).body, symbolize_names: true)
   end
 
-  def self.diseases_by_state(state)
-    get_url("/resource/x9gk-5huc.json?states=#{state}")
+  def self.diseases_by_state(state, current_week)
+    get_url("/resource/x9gk-5huc.json?states=#{state}&week=#{current_week}")
   end
 end

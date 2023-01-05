@@ -6,7 +6,7 @@ class DiseaseCaseSerializer
             :disease, 
             :cumulative_current, 
             :cumulative_last, 
-            :geocode, 
+            :coordinates, 
             :id, 
             :current_week_cases
 end
