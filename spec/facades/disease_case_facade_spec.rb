@@ -10,7 +10,7 @@ RSpec.describe DiseaseCaseFacade, :vcr, type: :facade do
       expect(facade[0].state).to eq("GEORGIA")
       expect(facade[0].state).to_not eq("COLORADO")
 
-      expect(facade[0].current_week).to eq(1)
+      expect(facade[0].current_week).to eq(51)
       expect(facade[0].disease).to eq("Anthrax")
       expect(facade[0].current_week_cases).to eq(0)
 

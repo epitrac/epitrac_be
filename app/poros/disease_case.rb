@@ -19,4 +19,5 @@ class DiseaseCase
     @cumulative_last = attributes[:m4].to_i 
     @coordinates = attributes[:geocode][:coordinates]
   end
+
 end
