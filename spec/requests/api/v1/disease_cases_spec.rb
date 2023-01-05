@@ -42,7 +42,7 @@ RSpec.describe 'disease cases endpoint' do
     DiseaseCase.new(attributes_1)
     DiseaseCase.new(attributes_2)
     
-    get '/api/v1/disease_data'
+    get '/api/v1/disease_cases'
 
     expect(response).to be_successful
 
