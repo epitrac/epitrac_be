@@ -17,7 +17,7 @@ require 'webmock/rspec'
 
 require 'simplecov'
 SimpleCov.start 'rails'
-SimpleCov.add_filter %w[spec config application_cable application_job application_mailer]
+SimpleCov.add_filter %w[spec config application_cable application_job application_mailer application_record]
 
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
