@@ -79,6 +79,8 @@ GEM
       ruby2_keywords (>= 0.0.4)
     faraday-net_http (3.0.2)
     ffi (1.15.5)
+    figaro (1.2.0)
+      thor (>= 0.14.0, < 2)
     globalid (1.0.0)
       activesupport (>= 5.0)
     hashdiff (1.0.1)
@@ -223,6 +225,7 @@ DEPENDENCIES
   factory_bot_rails
   faker
   faraday
+  figaro
   jsonapi-serializer
   listen (>= 3.0.5, < 3.2)
   net-http
@@ -243,4 +246,4 @@ RUBY VERSION
    ruby 2.7.4p191
 
 BUNDLED WITH
-   2.2.27
+   2.3.24
