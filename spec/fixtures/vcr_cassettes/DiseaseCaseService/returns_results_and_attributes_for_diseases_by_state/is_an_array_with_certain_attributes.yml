@@ -21,7 +21,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Thu, 05 Jan 2023 15:32:20 GMT
+      - Thu, 05 Jan 2023 18:10:44 GMT
       Content-Type:
       - application/json;charset=utf-8
       Transfer-Encoding:
@@ -53,7 +53,7 @@ http_interactions:
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains
       X-Socrata-Requestid:
-      - a5e6ffd098c6e38547b674b0172f8649
+      - 1748820191c698d2e7a4e74587dd0a40
     body:
       encoding: ASCII-8BIT
       string: |
@@ -167,5 +167,5 @@ http_interactions:
         ,{"states":"GEORGIA","year":"2022","week":"51","label":"Viral hemorrhagic fevers, Sabia virus","m1_flag":"-","m2_flag":"NC","m3_flag":"-","m4_flag":"-","location1":"GEORGIA","sort_order":"20225107522","geocode":{"type":"Point","coordinates":[-84.39111,33.74831]}}
         ,{"states":"GEORGIA","year":"2022","week":"51","label":"Yellow fever","m1_flag":"-","m2":"0","m2_flag":"-","m3_flag":"-","m4_flag":"-","location1":"GEORGIA","sort_order":"20225107592","geocode":{"type":"Point","coordinates":[-84.39111,33.74831]}}
         ,{"states":"GEORGIA","year":"2022","week":"51","label":"Zika virus disease, non-congenital","m1_flag":"-","m2":"0","m2_flag":"-","m3_flag":"-","m4_flag":"-","location1":"GEORGIA","sort_order":"20225107662","geocode":{"type":"Point","coordinates":[-84.39111,33.74831]}}]
-  recorded_at: Thu, 05 Jan 2023 15:32:20 GMT
+  recorded_at: Thu, 05 Jan 2023 18:10:44 GMT
 recorded_with: VCR 6.1.0

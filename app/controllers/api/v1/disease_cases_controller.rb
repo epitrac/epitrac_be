@@ -1,5 +1,9 @@
 class Api::V1::DiseaseCasesController < ApplicationController 
   def index 
-    render json: DiseaseCaseSerializer.new(DiseaseCaseFacade.states_diseases(params[:state]))
+    if params[:state]
+      render json: DiseaseCaseSerializer.new(DiseaseCaseFacade.states_diseases(params[:state]))
+    else
+      render json: DiseaseCaseSerializer.new(DiseaseCaseFacade.disease_cases) #change to facade
+    end 
   end
 end
