@@ -20,7 +20,7 @@ class DiseaseCase
     @coordinates = attributes[:geocode][:coordinates] if attributes[:geocode]
   end
 
-  def self.all
-    ObjectSpace.each_object(self).to_a
-  end
+  # def self.all
+  #   ObjectSpace.each_object(self).to_a
+  # end
 end
