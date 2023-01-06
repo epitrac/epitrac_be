@@ -1,5 +1,5 @@
 class FavoriteArticle < ApplicationRecord
-  validates :author,
+  validates_presence_of :author,
             :title,
             :year,
             :date,
@@ -7,6 +7,6 @@ class FavoriteArticle < ApplicationRecord
             :keywords,
             :abstract,
             :url,
-            :doi 
+            :doi, 
             :user_id 
 end
