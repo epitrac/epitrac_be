@@ -3,7 +3,7 @@ class Api::V1::DiseaseCasesController < ApplicationController
     if params[:state]
       render json: DiseaseCaseSerializer.new(DiseaseCaseFacade.states_diseases(params[:state]))
     else
-      render json: DiseaseCaseSerializer.new(DiseaseCaseFacade.disease_cases) #change to facade
+      render json: DiseaseCaseSerializer.new(DiseaseCaseFacade.disease_cases)
     end 
   end
 end
