@@ -18,9 +18,6 @@ RSpec.describe Disease, type: :model do
 
       expect(Disease.partial_match("SYPHIL")[0]).to eq(other_disease_info)
       expect(Disease.partial_match("SYPHIL")[0]).to_not eq(disease_info)
-
     end
   end
-
-
 end
