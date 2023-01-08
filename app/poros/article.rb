@@ -1,5 +1,6 @@
 class Article 
   attr_reader :id,
+              :article_id, 
               :author,
               :title,
               :year,
@@ -12,7 +13,8 @@ class Article
 
 
   def initialize(attributes)
-    @id = attributes[:record_number]
+    @id = attributes[:sort_order]
+    @article_id = attributes[:record_number]
     @author = attributes[:author]
     @title = attributes[:title]
     @year = attributes[:year]

@@ -1,6 +1,6 @@
 class ArticleSerializer 
   include JSONAPI::Serializer 
-  attributes  :id,
+  attributes  :article_id,
               :author,
               :title,
               :year,

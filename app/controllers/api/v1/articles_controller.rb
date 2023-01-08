@@ -9,8 +9,6 @@ class Api::V1::ArticlesController < ApplicationController
     result = render json: ArticleSerializer.new(ArticleFacade.article(params[:id]))
     
     parsed = JSON.parse(result)["data"]["attributes"]
-
-    require 'pry'; binding.pry
     FavoriteArticle.create!(parsed)
     FavoriteArticle.update(user_id: params[:user_id])
 

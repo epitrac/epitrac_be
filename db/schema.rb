@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_01_06_182411) do
+ActiveRecord::Schema.define(version: 2023_01_08_050012) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 2023_01_06_182411) do
     t.string "link"
   end
 
-  create_table "favorite_articles", force: :cascade do |t|
+  create_table "favorite_articles", id: :serial, force: :cascade do |t|
     t.string "author"
     t.string "title"
     t.string "year"
@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 2023_01_06_182411) do
     t.string "url"
     t.string "doi"
     t.integer "user_id"
+    t.string "article_id"
   end
 
 end

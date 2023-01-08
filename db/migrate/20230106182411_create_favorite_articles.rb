@@ -11,6 +11,8 @@ class CreateFavoriteArticles < ActiveRecord::Migration[5.2]
       t.string :url
       t.string :doi
       t.integer :user_id 
+      t.string :article_id 
+
     end
   end
 end
