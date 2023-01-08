@@ -66,5 +66,8 @@ RSpec.describe 'articles endpoint' do
     expect(response).to have_http_status 404
     errors = JSON.parse(response.body, symbolize_names: true)
     expect(errors[:error]).to eq("cannot save an article without a user id")
+
+    saved_article = FavoriteArticle.last 
+    expect(saved_article).to eq(nil)
   end
 end
