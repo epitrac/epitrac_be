@@ -1,6 +1,8 @@
 class FavoriteArticleSerializer 
   include JSONAPI::Serializer 
-  attributes :author,
+  attributes :article_id, 
+            :user_id,
+            :author,
             :title,
             :year,
             :date,
@@ -8,7 +10,5 @@ class FavoriteArticleSerializer
             :keywords,
             :abstract,
             :url,
-            :doi, 
-            :user_id,
-            :article_id 
+            :doi 
 end

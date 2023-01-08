@@ -1,20 +1,19 @@
 class Api::V1::FavoriteArticlesController < ApplicationController
-  def create 
-    # @article = ArticleFacade.articles(params[:disease])
-    # render json: ArticleSerializer.new(@article)
-    favorite_article = FavoriteArticle.new(ArticleFacade.articles(params[:disease]))
+  # def create 
+  #   # @article = ArticleFacade.articles(params[:disease])
+  #   # render json: ArticleSerializer.new(@article)
+  #   favorite_article = FavoriteArticle.new(ArticleFacade.articles(params[:disease]))
 
-    if favorite_article.save 
-      render json: favorite_article, status: :created 
-    else 
-      render json: favorite_article.errors, status: :unprocessable_entity 
-    end
-  end
+  #   if favorite_article.save 
+  #     render json: favorite_article, status: :created 
+  #   else 
+  #     render json: favorite_article.errors, status: :unprocessable_entity 
+  #   end
+  # end
 
   def index 
-    render json: FavoriteArticle.all 
-    # render json: FavoriteArticleSerializer.new(FavoriteArticle.all)
-
+    # render json: FavoriteArticle.all 
+    render json: FavoriteArticleSerializer.new(FavoriteArticle.all)
   end
 
   # private 
