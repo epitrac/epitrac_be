@@ -59,6 +59,10 @@ RSpec.describe ArticleService do
       expect(article[0]).to have_key(:title)
       expect(article[0][:title]).to be_a(String)
       expect(article.count).to eq(1)
+
+      expect(article[0][:record_number]).to eq("1076")
+      expect(article[0][:record_number]).to_not eq("1359")
+
     end
   end
 end
