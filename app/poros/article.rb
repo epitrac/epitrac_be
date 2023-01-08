@@ -1,4 +1,4 @@
-class Article 
+class Article
   attr_reader :id,
               :author,
               :title,
@@ -8,7 +8,7 @@ class Article
               :keywords,
               :abstract,
               :url,
-              :doi 
+              :doi
 
 
   def initialize(attributes)
@@ -22,6 +22,5 @@ class Article
     @abstract = attributes[:abstract]
     @url = attributes[:url]
     @doi = attributes[:doi]
-
   end
 end
