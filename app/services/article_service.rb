@@ -10,4 +10,10 @@ class ArticleService
   def self.articles_by_disease(disease)
     get_url("?$where=title like '%25#{disease}%25'")
   end
+
+  def self.one_article(article_id)
+    get_url("?record_number=#{article_id}")
+
+  end
+
 end

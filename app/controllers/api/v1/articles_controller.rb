@@ -1,12 +1,20 @@
 class Api::V1::ArticlesController < ApplicationController 
   def index 
-    render json: ArticleSerializer.new(ArticleFacade.articles(params[:disease]))
-    #if params[:user_id]
-      # FavoriteArticle.create(FavoriteArticleSerializer.new())
-    #end
+    @article = ArticleFacade.articles(params[:disease])
+    render json: ArticleSerializer.new(@article)
+
   end
 
-  def favorite 
-    if params[:user_id]
+  def show 
+    result = render json: ArticleSerializer.new(ArticleFacade.article(params[:id]))
+    
+    parsed = JSON.parse(result)["data"]["attributes"]
+
+    require 'pry'; binding.pry
+    FavoriteArticle.create!(parsed)
+    FavoriteArticle.update(user_id: params[:user_id])
+
   end
+
+
 end

@@ -12,7 +12,7 @@ RSpec.describe 'endpoint to save an article to user dashboard' do
       article = articles[0]
       user_id = "1" 
       
-      post "/api/v1/favorite_articles", headers: headers, params: JSON.generate(article)
+      post "/api/v1/favorite_articles?user_id=#{"1"}", headers: headers, params: JSON.generate(article)
     
       expect(response).to be_successful
 

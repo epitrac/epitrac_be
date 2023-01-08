@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(version: 2023_01_06_182411) do
     t.string "abstract"
     t.string "url"
     t.string "doi"
-    t.string "user_id"
+    t.integer "user_id"
   end
 
 end

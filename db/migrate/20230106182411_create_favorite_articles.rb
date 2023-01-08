@@ -10,7 +10,7 @@ class CreateFavoriteArticles < ActiveRecord::Migration[5.2]
       t.string :abstract
       t.string :url
       t.string :doi
-      t.string :user_id 
+      t.integer :user_id 
     end
   end
 end

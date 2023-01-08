@@ -6,6 +6,7 @@ Rails.application.routes.draw do
       resources :articles 
       resources :favorite_articles, only: [:index, :create]
       resources :disease_info
+
     end
   end
 end

@@ -7,6 +7,5 @@ class FavoriteArticle < ApplicationRecord
             :keywords,
             :abstract,
             :url,
-            :doi, 
-            :user_id 
+            :doi
 end
