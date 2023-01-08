@@ -11,7 +11,6 @@ class Api::V1::ArticlesController < ApplicationController
     parsed = JSON.parse(result)["data"]["attributes"]
     FavoriteArticle.create!(parsed)
     FavoriteArticle.update(user_id: params[:user_id])
-
   end
 
 
