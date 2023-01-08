@@ -56,5 +56,14 @@ RSpec.describe 'endpoint to save an article to user dashboard' do
       expect(saved_articles.pluck(:id)).to_not eq([article3.id.to_s])
 
     end
+
+    it 'sad path, returns error without a user_id' do 
+      get "/api/v1/favorite_articles"
+      expect(response).to have_http_status 404
+      errors = JSON.parse(response.body, symbolize_names: true)
+      expect(errors[:error]).to eq("cannot find saved articles without a user id")
+
+
+    end
   end
 end
