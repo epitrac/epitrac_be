@@ -43,4 +43,26 @@ RSpec.describe ArticleService do
       expect(article[:record_number]).to be_an(String)
     end
   end
+
+  describe 'show one article endpoint' do 
+    it 'returns an articles data based on article id', :vcr do 
+      article= ArticleService.one_article("1076")
+
+      expect(article).to be_an Array 
+
+      expect(article[0]).to have_key(:author)
+      expect(article[0][:author]).to be_a(String)
+      
+      expect(article[0]).to have_key(:year)
+      expect(article[0][:year]).to be_a(String)
+
+      expect(article[0]).to have_key(:title)
+      expect(article[0][:title]).to be_a(String)
+      expect(article.count).to eq(1)
+
+      expect(article[0][:record_number]).to eq("1076")
+      expect(article[0][:record_number]).to_not eq("1359")
+
+    end
+  end
 end
