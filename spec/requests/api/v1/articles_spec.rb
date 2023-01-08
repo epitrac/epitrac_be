@@ -48,26 +48,4 @@ RSpec.describe 'articles endpoint' do
     expect(errors[:error]).to eq("cannot return articles without a disease")
   end
 
-  it 'gets data for one article endpoint, save this data to favorite articles table', :vcr do 
-    get "/api/v1/articles/1076?user_id=6"
-
-    expect(response).to be_successful
-
-    article = JSON.parse(response.body, symbolize_names: true)[:data]
-
-    saved_article = FavoriteArticle.last 
-
-    expect(saved_article.article_id).to eq(article[:attributes][:article_id])
-    expect(saved_article.user_id).to eq(6)
-  end
-
-  it 'sad path, returns error if user id params are missing' do 
-    get "/api/v1/articles/1076"
-    expect(response).to have_http_status 404
-    errors = JSON.parse(response.body, symbolize_names: true)
-    expect(errors[:error]).to eq("cannot save an article without a user id")
-
-    saved_article = FavoriteArticle.last 
-    expect(saved_article).to eq(nil)
-  end
 end

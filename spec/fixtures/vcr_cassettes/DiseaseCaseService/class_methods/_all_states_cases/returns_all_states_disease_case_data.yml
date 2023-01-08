@@ -21,7 +21,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Sun, 08 Jan 2023 17:50:39 GMT
+      - Sun, 08 Jan 2023 21:15:06 GMT
       Content-Type:
       - application/json;charset=utf-8
       Transfer-Encoding:
@@ -47,13 +47,13 @@ http_interactions:
       Vary:
       - Accept-Encoding
       Age:
-      - '0'
+      - '2'
       X-Socrata-Region:
       - aws-us-east-1-fedramp-prod
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains
       X-Socrata-Requestid:
-      - 11e59ee642b5b5157a669e0128bc4a45
+      - d4be787945a95c139d5fe862c38b3d57
     body:
       encoding: ASCII-8BIT
       string: |
@@ -1057,5 +1057,5 @@ http_interactions:
         ,{"states":"OHIO","year":"2022","week":"51","label":"Campylobacteriosis","m1_flag":"-","m2":"98","m2_flag":"-","m3":"2088","m3_flag":"-","m4":"1956","m4_flag":"-","location1":"OHIO","sort_order":"20225100998","geocode":{"type":"Point","coordinates":[-83.00276,39.96199]}}
         ,{"states":"WISCONSIN","year":"2022","week":"51","label":"Campylobacteriosis","m1":"9","m1_flag":"-","m2":"44","m2_flag":"-","m3":"1152","m3_flag":"-","m4":"1325","m4_flag":"-","location1":"WISCONSIN","sort_order":"20225100999","geocode":{"type":"Point","coordinates":[-89.38645,43.07313]}}
         ,{"states":"WEST NORTH CENTRAL","year":"2022","week":"51","label":"Campylobacteriosis","m1":"11","m1_flag":"-","m2":"124","m2_flag":"-","m3":"3661","m3_flag":"-","m4":"5961","m4_flag":"-","location2":"WEST NORTH CENTRAL","sort_order":"20225101000"}]
-  recorded_at: Sun, 08 Jan 2023 17:50:39 GMT
+  recorded_at: Sun, 08 Jan 2023 21:15:06 GMT
 recorded_with: VCR 6.1.0

@@ -1,0 +1,183 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://data.cdc.gov/resource/biid-68vb.json?record_number=3
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Sun, 08 Jan 2023 21:15:03 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      Etag:
+      - '"YnJhdm8uNTAwNl8zXzQwOC1mUUlwXzFIdlAybS1QTEtqM2lSRF9YWjVXWQ---gzin4HAsfS-1knMoTlHm6VAATnElAF--gzip--gzip"'
+      X-Soda2-Fields:
+      - '["record_number","reference_type","author","year","title","secondary_author","secondary_title","publisher","volume","number_of_volumes","number","pages","section","tertiary_author","tertiary_title","edition","date","type_of_work","subsidiary_author","short_title","alternate_title","isbn_issn","original_publication","reprint_edition","reviewed_item","custom_1","custom_2","custom_3","custom_4","custom_5","custom_6","custom_7","custom_8","accession_number","call_number","label","keywords","abstract","notes","research_notes","url","author_address","figure","caption","access_date","translated_author","translated_title","name_of_database","database_provider","language","publisher_location","doi"]'
+      X-Soda2-Types:
+      - '["number","text","text","number","text","text","text","text","number","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","number","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text"]'
+      X-Soda2-Data-Out-Of-Date:
+      - 'false'
+      X-Soda2-Truth-Last-Modified:
+      - Wed, 21 Dec 2022 19:51:38 GMT
+      X-Soda2-Secondary-Last-Modified:
+      - Wed, 21 Dec 2022 19:51:38 GMT
+      Last-Modified:
+      - Wed, 21 Dec 2022 19:51:38 GMT
+      Vary:
+      - Accept-Encoding
+      Age:
+      - '0'
+      X-Socrata-Region:
+      - aws-us-east-1-fedramp-prod
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      X-Socrata-Requestid:
+      - cb422e94bd14a0bb32f01bb1b3247423
+    body:
+      encoding: ASCII-8BIT
+      string: '[{"record_number":"3","reference_type":"Generic","author":"Crepaz,
+        N. T., T., Marks, G., Hall, H. I.,","year":"2017","title":"Changes in viral
+        suppression status among HIV patients receiving care: United States, 2014","secondary_title":"Aids","edition":"10/14/2017","date":"10-Dec","short_title":"Changes
+        in viral suppression status among HIV patients receiving care: United States,
+        2014","alternate_title":"AIDS (London, England)","isbn_issn":"0269-9370","custom_1":"Top
+        Articles of the Week","custom_2":"Communicable Diseases","custom_8":"9:43","accession_number":"29028661","abstract":"OBJECTIVE:
+        To examine changes in viral suppression status among HIV patients receiving
+        care in 2014 and the extent of viral suppression among persons with infrequent
+        care visits. METHODS: Using data reported to the National HIV Surveillance
+        System from 33 jurisdictions with complete reporting of CD4 and viral load
+        tests, we created four viral suppression status groups based on their first
+        and last viral loads in 2014: both suppressed, first unsuppressed and last
+        suppressed (improved), first suppressed and last unsuppressed (worsened),
+        and both unsuppressed. We also calculated the number and percentage of persons
+        whose sole viral load in 2014 was suppressed and had a suppressed viral load
+        at their last test in 2013. RESULTS: Among 339515 persons with at least two
+        viral load tests in 2014, 72.6% had all viral loads suppressed (durably suppressed);
+        75.5% had the first and last tests suppressed, 10.5% improved, 4.2% worsened,
+        and 9.9% had both unsuppressed. Among 92309 persons who had only one viral
+        load test in 2014, 69960 (75.8%) were suppressed and, of those, 53834 (76.9%)
+        also had a suppressed viral load at their last test in 2013. CONCLUSIONS:
+        National surveillance data show that the majority of patients in HIV care
+        during 2014 were durably suppressed. More showed improved compared to worsened
+        viral suppression status. Some patients who have less frequent care visits
+        have sustained viral suppression. Yet one in ten who were in regular care
+        did not have a suppressed viral load in 2014, indicating missed opportunities
+        for clinical interventions to help patients achieve and sustain viral suppression.","notes":"1473-5571:Crepaz,
+        Nicole:Tang, Tian:Marks, Gary:Hall, H Irene:Journal Article:England:AIDS.
+        2017 Oct 12. doi: 10.1097/QAD.0000000000001660.","url":"http://www.ncbi.nlm.nih.gov/pubmed/29028661","author_address":"aDivision
+        of HIV/AIDS Prevention, the U.S. Centers for Disease Control and Prevention,
+        Atlanta, Georgia bICF International, Atlanta, Georgia.","database_provider":"NLM","language":"eng","doi":"10.1097/qad.0000000000001660"}]
+
+'
+  recorded_at: Sun, 08 Jan 2023 21:15:03 GMT
+- request:
+    method: get
+    uri: https://data.cdc.gov/resource/biid-68vb.json?record_number=3
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Sun, 08 Jan 2023 21:15:04 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      Etag:
+      - '"YnJhdm8uNTAwNl8zXzQwOC1mUUlwXzFIdlAybS1QTEtqM2lSRF9YWjVXWQ---gzin4HAsfS-1knMoTlHm6VAATnElAF--gzip--gzip"'
+      X-Soda2-Fields:
+      - '["record_number","reference_type","author","year","title","secondary_author","secondary_title","publisher","volume","number_of_volumes","number","pages","section","tertiary_author","tertiary_title","edition","date","type_of_work","subsidiary_author","short_title","alternate_title","isbn_issn","original_publication","reprint_edition","reviewed_item","custom_1","custom_2","custom_3","custom_4","custom_5","custom_6","custom_7","custom_8","accession_number","call_number","label","keywords","abstract","notes","research_notes","url","author_address","figure","caption","access_date","translated_author","translated_title","name_of_database","database_provider","language","publisher_location","doi"]'
+      X-Soda2-Types:
+      - '["number","text","text","number","text","text","text","text","number","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","number","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text"]'
+      X-Soda2-Data-Out-Of-Date:
+      - 'false'
+      X-Soda2-Truth-Last-Modified:
+      - Wed, 21 Dec 2022 19:51:38 GMT
+      X-Soda2-Secondary-Last-Modified:
+      - Wed, 21 Dec 2022 19:51:38 GMT
+      Last-Modified:
+      - Wed, 21 Dec 2022 19:51:38 GMT
+      Vary:
+      - Accept-Encoding
+      Age:
+      - '0'
+      X-Socrata-Region:
+      - aws-us-east-1-fedramp-prod
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      X-Socrata-Requestid:
+      - d0605842f08f184710a852e2cb3f06c3
+    body:
+      encoding: ASCII-8BIT
+      string: '[{"record_number":"3","reference_type":"Generic","author":"Crepaz,
+        N. T., T., Marks, G., Hall, H. I.,","year":"2017","title":"Changes in viral
+        suppression status among HIV patients receiving care: United States, 2014","secondary_title":"Aids","edition":"10/14/2017","date":"10-Dec","short_title":"Changes
+        in viral suppression status among HIV patients receiving care: United States,
+        2014","alternate_title":"AIDS (London, England)","isbn_issn":"0269-9370","custom_1":"Top
+        Articles of the Week","custom_2":"Communicable Diseases","custom_8":"9:43","accession_number":"29028661","abstract":"OBJECTIVE:
+        To examine changes in viral suppression status among HIV patients receiving
+        care in 2014 and the extent of viral suppression among persons with infrequent
+        care visits. METHODS: Using data reported to the National HIV Surveillance
+        System from 33 jurisdictions with complete reporting of CD4 and viral load
+        tests, we created four viral suppression status groups based on their first
+        and last viral loads in 2014: both suppressed, first unsuppressed and last
+        suppressed (improved), first suppressed and last unsuppressed (worsened),
+        and both unsuppressed. We also calculated the number and percentage of persons
+        whose sole viral load in 2014 was suppressed and had a suppressed viral load
+        at their last test in 2013. RESULTS: Among 339515 persons with at least two
+        viral load tests in 2014, 72.6% had all viral loads suppressed (durably suppressed);
+        75.5% had the first and last tests suppressed, 10.5% improved, 4.2% worsened,
+        and 9.9% had both unsuppressed. Among 92309 persons who had only one viral
+        load test in 2014, 69960 (75.8%) were suppressed and, of those, 53834 (76.9%)
+        also had a suppressed viral load at their last test in 2013. CONCLUSIONS:
+        National surveillance data show that the majority of patients in HIV care
+        during 2014 were durably suppressed. More showed improved compared to worsened
+        viral suppression status. Some patients who have less frequent care visits
+        have sustained viral suppression. Yet one in ten who were in regular care
+        did not have a suppressed viral load in 2014, indicating missed opportunities
+        for clinical interventions to help patients achieve and sustain viral suppression.","notes":"1473-5571:Crepaz,
+        Nicole:Tang, Tian:Marks, Gary:Hall, H Irene:Journal Article:England:AIDS.
+        2017 Oct 12. doi: 10.1097/QAD.0000000000001660.","url":"http://www.ncbi.nlm.nih.gov/pubmed/29028661","author_address":"aDivision
+        of HIV/AIDS Prevention, the U.S. Centers for Disease Control and Prevention,
+        Atlanta, Georgia bICF International, Atlanta, Georgia.","database_provider":"NLM","language":"eng","doi":"10.1097/qad.0000000000001660"}]
+
+'
+  recorded_at: Sun, 08 Jan 2023 21:15:04 GMT
+recorded_with: VCR 6.1.0

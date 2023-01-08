@@ -1,4 +1,4 @@
-class Article 
+class Article
   attr_reader :id,
               :article_id, 
               :author,
@@ -9,7 +9,7 @@ class Article
               :keywords,
               :abstract,
               :url,
-              :doi 
+              :doi
 
 
   def initialize(attributes)
