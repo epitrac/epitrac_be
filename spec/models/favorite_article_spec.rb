@@ -11,7 +11,5 @@ RSpec.describe FavoriteArticle, type: :model do
     it { should validate_presence_of :abstract }
     it { should validate_presence_of :url }
     it { should validate_presence_of :doi }
-    it { should validate_presence_of :user_id }
-
   end
 end

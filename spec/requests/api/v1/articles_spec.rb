@@ -7,9 +7,12 @@ RSpec.describe 'articles endpoint' do
     expect(response).to be_successful
 
     articles = JSON.parse(response.body, symbolize_names: true)[:data]
+    
+    expect(articles[0]).to have_key(:id)
+    expect(articles[0][:id]).to be_a(String)
 
-    expect(articles[0][:attributes]).to have_key(:id)
-    expect(articles[0][:attributes][:id]).to be_a(String)
+    expect(articles[0][:attributes]).to have_key(:article_id)
+    expect(articles[0][:attributes][:article_id]).to be_a(String)
 
     expect(articles[0][:attributes]).to have_key(:author)
     expect(articles[0][:attributes][:author]).to be_a(String)
