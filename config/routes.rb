@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     namespace :v1 do 
       resources :disease_cases
       resources :articles 
-      resources :favorite_articles, only: [:index, :create]
+      resources :favorite_articles, only: [:index, :create, :destroy]
       resources :disease_info
 
     end
