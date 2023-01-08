@@ -9,11 +9,16 @@ class Api::V1::ArticlesController < ApplicationController
   end
 
   def show 
-    result = render json: ArticleSerializer.new(ArticleFacade.article(params[:id]))
-    
-    parsed = JSON.parse(result)["data"]["attributes"]
-    FavoriteArticle.create!(parsed)
-    FavoriteArticle.update(user_id: params[:user_id])
+    if params[:id] && params[:user_id]
+      result = render json: ArticleSerializer.new(ArticleFacade.article(params[:id]))
+      
+      parsed = JSON.parse(result)["data"]["attributes"]
+      FavoriteArticle.create!(parsed)
+      FavoriteArticle.update(user_id: params[:user_id])
+    else 
+      render json: {error: "cannot save an article without a user id"}, status: 404
+
+    end
   end
 
 
