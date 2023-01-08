@@ -4,4 +4,5 @@ class ArticleFacade
       Article.new(article_data)
     end
   end
+
 end
