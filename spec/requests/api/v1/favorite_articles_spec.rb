@@ -24,7 +24,8 @@ RSpec.describe 'endpoint to save an article to user dashboard' do
   describe 'an instance of favorite article can be deleted' do 
     it 'deletes a saved article from favorite articles table', :vcr do 
       FavoriteArticle.create!(id: 36, author: "hi", date: "hi", title: "Hi", year: "2023", isbn_issn: "1234", keywords: "hi", abstract: "hi", url: "hi", doi: "hi", article_id: "12", user_id: 1)
-
+      saved_article = FavoriteArticle.last 
+      expect(saved_article.id).to eq(36)
       delete "/api/v1/favorite_articles/36"
 
       saved_article = FavoriteArticle.last 
