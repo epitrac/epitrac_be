@@ -5,8 +5,4 @@ class ArticleFacade
     end
   end
 
-  def self.article(article_id)
-    article = ArticleService.one_article(article_id)[0]
-    Article.new(article)
-  end
 end
