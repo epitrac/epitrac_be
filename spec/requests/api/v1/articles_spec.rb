@@ -41,4 +41,10 @@ RSpec.describe 'articles endpoint' do
     expect(articles[0][:attributes]).to have_key(:doi)
     expect(articles[0][:attributes][:doi]).to be_a(String)
   end
+  it 'sad path testing, returns error without disease params', :vcr do 
+    get "/api/v1/articles"
+    expect(response).to have_http_status 404
+    errors = JSON.parse(response.body, symbolize_names: true)
+    expect(errors[:error]).to eq("cannot return articles without a disease")
+  end
 end

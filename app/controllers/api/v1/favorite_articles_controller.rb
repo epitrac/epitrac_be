@@ -1,7 +1,6 @@
 class Api::V1::FavoriteArticlesController < ApplicationController
 
   def index 
-    # render json: FavoriteArticleSerializer.new(FavoriteArticle.all)
     if params[:user_id]
       render json: FavoriteArticleSerializer.new(FavoriteArticle.where(user_id: params[:user_id]))
     else 
