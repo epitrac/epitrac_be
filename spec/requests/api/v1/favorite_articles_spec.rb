@@ -31,6 +31,14 @@ RSpec.describe 'endpoint to save an article to user dashboard' do
       saved_article = FavoriteArticle.last 
       expect(saved_article).to eq(nil)
     end
+
+    it 'an article cant be deleted if it doesnt exist' do 
+      delete "/api/v1/favorite_articles/36"
+      expect(response).to have_http_status 404
+      errors = JSON.parse(response.body, symbolize_names: true)
+      expect(errors[:error]).to eq("no favorite article exists with that id")
+    end
+
   end
 
   describe 'get all of a users saved articles' do 
