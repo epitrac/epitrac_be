@@ -8,6 +8,7 @@ class FavoriteArticleSerializer
             :keywords,
             :abstract,
             :url,
-            :doi 
-            :user_id 
+            :doi, 
+            :user_id,
+            :article_id 
 end

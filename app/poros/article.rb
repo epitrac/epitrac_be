@@ -13,7 +13,7 @@ class Article
 
 
   def initialize(attributes)
-    @id = attributes[:sort_order]
+    @id = attributes[:record_number]
     @article_id = attributes[:record_number]
     @author = attributes[:author]
     @title = attributes[:title]
@@ -24,6 +24,5 @@ class Article
     @abstract = attributes[:abstract]
     @url = attributes[:url]
     @doi = attributes[:doi]
-
   end
 end

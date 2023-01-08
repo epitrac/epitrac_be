@@ -9,5 +9,5 @@ class ArticleSerializer
               :keywords,
               :abstract,
               :url,
-              :doi 
+              :doi
 end
