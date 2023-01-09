@@ -1,9 +1,9 @@
 require 'rails_helper'
 
-RSpec.describe 'endpoint to save an article to user dashboard' do 
-  describe 'as user can save an article' do 
+RSpec.describe 'endpoint to save an article to user dashboard' do
+  describe 'as user can save an article' do
 
-    it 'creates and saves an instance of user article', :vcr do 
+    it 'creates and saves an instance of user article', :vcr do
 
       get "/api/v1/articles?disease=Anthrax"
       expect(response).to be_successful
@@ -13,11 +13,11 @@ RSpec.describe 'endpoint to save an article to user dashboard' do
 
       post "/api/v1/user_articles?user_id=2&article_id=#{article_id}"
 
-      
-    
+
+
       expect(response).to be_successful
 
-      saved_article = UserArticle.last 
+      saved_article = UserArticle.last
 
       expect(saved_article.user_id).to eq(2)
       expect(saved_article.article_id).to eq(article_id.to_i)
@@ -25,19 +25,19 @@ RSpec.describe 'endpoint to save an article to user dashboard' do
     end
   end
 
-  describe 'an instance of user article can be deleted' do 
-    it 'deletes a saved article from user articles table', :vcr do 
+  describe 'an instance of user article can be deleted' do
+    it 'deletes a saved article from user articles table', :vcr do
       UserArticle.create!(user_id: 2, article_id: 25)
-      saved_article = UserArticle.last 
+      saved_article = UserArticle.last
       expect(saved_article.user_id).to eq(2)
       # delete "/api/v1/user_articles/36?user_id=#{saved_article.user_id}&article_id=#{saved_article.article_id}"
       delete "/api/v1/user_articles/#{saved_article.id}"
 
-      saved_article = UserArticle.last 
+      saved_article = UserArticle.last
       expect(saved_article).to eq(nil)
     end
 
-    it 'an article cant be deleted if it doesnt exist' do 
+    it 'an article cant be deleted if it doesnt exist' do
       delete "/api/v1/user_articles/10"
       expect(response).to have_http_status 404
       errors = JSON.parse(response.body, symbolize_names: true)
@@ -46,10 +46,10 @@ RSpec.describe 'endpoint to save an article to user dashboard' do
 
   end
 
-  describe 'get all of a users saved articles' do 
-    it 'returns a list of that users saved articles', :vcr do 
+  describe 'get all of a users saved articles' do
+    it 'returns a list of that users saved articles', :vcr do
       article1= UserArticle.create!(user_id: 1, article_id: 3)
-      article2= UserArticle.create!(user_id: 1, article_id: 3)
+      article2= UserArticle.create!(user_id: 1, article_id: 4)
       article3= UserArticle.create!(user_id: 2, article_id: 3)
 
       expect(UserArticle.all.count).to eq(3)
@@ -62,7 +62,7 @@ RSpec.describe 'endpoint to save an article to user dashboard' do
 
     end
 
-    it 'sad path, returns error without a user_id' do 
+    it 'sad path, returns error without a user_id' do
       get "/api/v1/user_articles"
       expect(response).to have_http_status 404
       errors = JSON.parse(response.body, symbolize_names: true)
