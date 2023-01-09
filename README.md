@@ -165,6 +165,34 @@ Response:
 ```
 </details>
 
+<details close>
+<summary>Get Info about a given disease </summary>
+<br>
+
+Request:
+**GET** `/api/v1/disease_info?disease=#{disease}`
+
+Headers: <br>
+```
+
+```
+
+Response:
+```json
+{
+    "data": {
+        "id": "1",
+        "type": "disease_info",
+        "attributes": {
+            "disease": "Anthrax",
+            "information": "Anthrax is a serious infectious disease caused by gram-positive, rod-shaped bacteria known as Bacillus anthracis. It occurs naturally in soil and commonly affects domestic and wild animals around the world. People can get sick with anthrax if they come in contact with infected animals or contaminated animal products. Anthrax can cause severe illness in both humans and animals.",
+            "link": "https://www.cdc.gov/anthrax/"
+        }
+    }
+}
+```
+</details>
+
 ## Schema
 
 -WIP-
