@@ -31,41 +31,74 @@ The back-end handles the project's API consumption and acts as the interface to 
 1. Clone the repository
 2. cd into the root directory
 3. Install gem packages: `bundle install`
-4. Setup the database: `rails db:create`
+4. Setup the database: `rails db:{drop,create,migrate}`
+5. Import [Disease Info](https://github.com/epitrac/epitrac_be/blob/main/db/data/nndss_diseases_info.csv) into diseases table: `rake csv_load:diseases`
+6. Run `rails c` and then `Disease.count`. You should have 109 diseases.
+7. You may run the RSpec test suite locally with `bundle exec rspec`
 
 ## Endpoints
+Back End Server: https://epitrac-be.herokuapp.com/
+- ### Disease Cases
 <details close>
-<summary>Get State Latest Week Disease Cases</summary>
+<summary>Get the Latest Week Disease Cases by State</summary>
 <br>
 
-Request:
-**GET** `/api/v1/disease_cases?state=#{state_name}`
 
-Headers: <br>
+Returns a list of diseases in that state for the most recent MMWR week recorded in the [NNDSS Weekly Dataset](https://data.cdc.gov/NNDSS/NNDSS-Weekly-Data/x9gk-5huc).
+Data Sourced from the [NNDSS Weekly Data API](https://dev.socrata.com/foundry/data.cdc.gov/x9gk-5huc)
+
+Request: <br>
 ```
-
+GET /api/v1/disease_cases?state=#{state_name}
 ```
+Example:
+[Get Disease Cases in Georgia](https://epitrac-be.herokuapp.com/api/v1/disease_cases?state=GEORGIA)
 
-Response:
+JSON Response Example:
 ```json
 {
     "data": [
         {
-            "type": "disease_cases",
-            "id": "1",
+            "id": "20225200032",
+            "type": "disease_case",
             "attributes": {
-                "state" :" GEORGIA",
-                "year" : "2022",
-                "current_week": 1,
-                "disease" : "Anthrax",
-                "current_week_cases": 2,
-                "cumulative_current" : 200,
-                "cumulative_last" : 150,
-                "coordinates" : [-83.426, 32.638]
-            }
-        }
-       ]
+                "state": "GEORGIA",
+                "year": "2022",
+                "current_week": 52,
+                "disease": "Anthrax",
+                "cumulative_current": 0,
+                "cumulative_last": 0,
+                "coordinates": [
+                    -84.39111,
+                    33.74831
+                ],
+                "id": "20225200032",
+                "current_week_cases": 0
+              }
+        },
+        {
+            "id": "20225200102",
+            "type": "disease_case",
+            "attributes": {
+                "state": "GEORGIA",
+                "year": "2022",
+                "current_week": 52,
+                "disease": "Arboviral diseases, Chikungunya virus disease",
+                "cumulative_current": 0,
+                "cumulative_last": 0,
+                "coordinates": [
+                    -84.39111,
+                    33.74831
+                ],
+                "id": "20225200102",
+                "current_week_cases": 0
+              }
+        },
+        {...},
+        {...},
+        ]
 }
+
 ```
 </details>
 
@@ -73,68 +106,84 @@ Response:
 <summary>Get All Disease Cases for Current Week</summary>
 <br>
 
-Request:
-**GET** `/api/v1/disease_cases`
 
-Headers: <br>
+Returns a list of diseases in all states for the most recent MMWR week recorded in the [NNDSS Weekly Dataset](https://data.cdc.gov/NNDSS/NNDSS-Weekly-Data/x9gk-5huc).
+
+Data Sourced from the [NNDSS Weekly Data API](https://dev.socrata.com/foundry/data.cdc.gov/x9gk-5huc).
+
+Request: <br>
 ```
-
+GET /api/v1/disease_cases
 ```
+Example: 
+[Get All Disease Cases For Latest Week](https://epitrac-be.herokuapp.com/api/v1/disease_cases)
 
-Response:
+JSON Response Example:
 ```json
 {
     "data": [
         {
-            "type": "disease_cases",
-            "id": "1",
+            "id": "20225200003",
+            "type": "disease_case",
             "attributes": {
-                "state" :" GEORGIA",
-                "year" : "2022",
-                "current_week": 1,
-                "disease" : "Anthrax",
-                "current_week_cases": 2,
-                "cumulative_current" : 200,
-                "cumulative_last" : 150,
-                "coordinates" : [-83.426, 32.638]
+                "state": "CONNECTICUT",
+                "year": "2022",
+                "current_week": 52,
+                "disease": "Anthrax",
+                "cumulative_current": 0,
+                "cumulative_last": 0,
+                "coordinates": [
+                    -72.67399,
+                    41.76376
+                ],
+                "id": "20225200003",
+                "current_week_cases": 0
             }
         },
         {
-            "type": "disease_cases",
-            "id": "2",
+            "id": "20225200004",
+            "type": "disease_case",
             "attributes": {
-                "state" :" COLORADO",
-                "year" : "2022",
-                "current_week": 1,
-                "disease" : "Measles",
-                "current_week_cases": 1,
-                "cumulative_current" : 100,
-                "cumulative_last" : 50,
-                "coordinates" : [-83.426, 32.638]
+                "state": "MAINE",
+                "year": "2022",
+                "current_week": 52,
+                "disease": "Anthrax",
+                "cumulative_current": 0,
+                "cumulative_last": 0,
+                "coordinates": [
+                    -69.77631,
+                    44.31804
+                ],
+                "id": "20225200004",
+                "current_week_cases": 0
             }
         },
         {...},
         {...},
-        ...
-        ...
-       ]
+    ]
 }
 ```
 </details>
 
+- ### Articles
 <details close>
-<summary>Get Disease Articles</summary>
+
+<summary>Get Articles for a Disease</summary>
 <br>
 
-Request:
-**GET** `/api/v1/articles?disease=#{disease}`
 
-Headers: <br>
+Returns a list of articles related to that disease.
+
+Data sourced from [Science Clips](https://dev.socrata.com/foundry/data.cdc.gov/biid-68vb).
+
+Request: <br>
 ```
-
+GET /api/v1/articles?disease=#{disease}
 ```
+Example: 
+[Get Articles Related to Anthrax](https://epitrac-be.herokuapp.com/api/v1/articles?disease=anthrax)
 
-Response:
+JSON Response Example:
 ```json
 {
  "data": [
@@ -142,116 +191,53 @@ Response:
             "id": "1076",
             "type": "article",
             "attributes": {
-                "id": "1076",
+                "article_id": "1076",
                 "author": "de Oliveira, F. F. M. M., S.;Gonti, S.;Brey, R. N.;Li, H.;Schiffer, J.;Casadevall, A.;Bann, J. G.",
                 "title": "Binding of the von Willebrand factor a domain of capillary morphogenesis protein 2 to anthrax protective antigen vaccine reduces immunogenicity in mice",
                 "year": "2020",
                 "date": "15-01",
                 "isbn_issn": "2379-5042",
                 "keywords": "anthrax:antigen processing:immunization:protein stability",
-                "abstract": "Protective antigen (PA)
-....
-....},
-{
- "id": "1380",
-            "type": "article",
-            "attributes": {
-                "id": "1380",
-                "author": "Hupert, N. W., D.,  Cuomo, J.,  Hollingsworth, E.,  Neukermans, K.,  Xiong, W.,",
-                "title": "Predicting hospital surge after a large-scale anthrax attack: a model-based analysis of CDC's cities readiness initiative prophylaxis recommendations",
-                "year": "2009"
-.....}
-]
-```
-</details>
-
-<details close>
-<summary>Get Info about a given disease </summary>
-<br>
-
-Request:
-**GET** `/api/v1/disease_info?disease=#{disease}`
-
-Headers: <br>
-```
-
-```
-
-Response:
-```json
-{
-    "data": {
-        "id": "1",
-        "type": "disease_info",
-        "attributes": {
-            "disease": "Anthrax",
-            "information": "Anthrax is a serious infectious disease caused by gram-positive, rod-shaped bacteria known as Bacillus anthracis. It occurs naturally in soil and commonly affects domestic and wild animals around the world. People can get sick with anthrax if they come in contact with infected animals or contaminated animal products. Anthrax can cause severe illness in both humans and animals.",
-            "link": "https://www.cdc.gov/anthrax/"
-        }
-    }
-}
-```
-</details>
-
-<details close>
-<summary>Get a user's saved articles from user_aritcles table in back_end </summary>
-<br>
-
-Request:
-**GET** `/api/v1/user_articles?user_id=#{user_id}`
-
-Headers: <br>
-```
-
-```
-
-Response:
-```json
-{
- "data": [
-        {
-            "id": "8",
-            "type": "article",
-            "attributes": {
-                "article_id": "4",
-                "author": "Auld, A. F. V., Pelletier, Robin, E. G., Shiraishi, R. W., Dee, J., Antoine, M., Desir, Y., Desforges, G., Delcher, C., Duval, N., Joseph, N., Francois, K., Griswold, M., Domercant, J. W., Patrice Joseph, Y. A., Van Onacker, J. D., Deyde, V., Lowrance, D. W., And The Groupe d'Analyses, Salvh,",
-                "title": "Retention throughout the HIV care...",
-                "year": "2017",
-                "date": "Oct",
-                "isbn_issn": "0002-9637",
-                "keywords": null,
-                "abstract": "Monitoring retention of people living with HIV (PLHIV) in the HIV care...",
-                "url": "http://www.ncbi.nlm.nih.gov/pubmed/29064357/?otool=cdciclib",
-                "doi": "10.4269/ajtmh.17-0116"
+                "abstract": "Protective antigen (PA) is a component of anthrax toxin ....",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/31941807",
+                "doi": "10.1128/mSphere.00556-19"
             }
         },
         {
-            "id": "4",
+            "id": "1380",
             "type": "article",
             "attributes": {
-                "article_id": "3",
-                "author": "Crepaz, N. T., T., Marks, G., Hall, H. I.,",
-                "title": "...
-            }
-        }
-   ]
+                "article_id": "1380",
+                "author": "Hupert, N. W., D.,  Cuomo, J.,  Hollingsworth, E.,  Neukermans, K.,  Xiong, W.,",
+                "title": "Predicting hospital surge after a large-scale anthrax attack: a model-based analysis of CDC's cities readiness initiative prophylaxis recommendations",
+                "year": "2009",
+                "date": "Jul-Aug",
+                "isbn_issn": "0272-989X (Print)",
+                "keywords": null,
+                "abstract": "BACKGROUND: A CRI-compliant prophylaxis...",
+                "url": "http://mdm.sagepub.com/cgi/reprint/29/4/424",
+                "doi": "10.1177/0272989X09341389"
+            }      
+        },
+        {...},
+        {...},
+        ...
+        ...
+      ]
 }
 ```
 </details>
 
 <details close>
-<summary> Store an article to a user in the user_articles table </summary>
+<summary> Save an Article for a User </summary>
 <br>
 
-Request:
-**POST** `/api/v1/user_articles?user_id=#{user_id}&article_id=#{article_id}`
-
-Headers: <br>
+Request: <br>
+```
+POST /api/v1/user_articles?user_id=#{user_id}&article_id=#{article_id}
 ```
 
-```
-
-Response:
+JSON Response Example:
 ```json
 {
  "data": {
@@ -262,6 +248,136 @@ Response:
             "article_id": 88
         }
     }
+}
+```
+</details>
+
+<details close>
+<summary> Delete a Saved Article for a User </summary>
+<br>
+
+Request: <br>
+```
+DELETE /api/v1/user_articles/:id
+```
+
+JSON Response Example:
+```json
+{
+    "message": "The article was successfully deleted from your dashboard"
+}
+```
+</details>
+
+<details close>
+<summary> Get a Users Saved Articles </summary>
+<br>
+
+
+Request: <br>
+```
+GET /api/v1/user_articles/?user_id=#{user_id}
+```
+
+JSON Response Example:
+```json
+{
+    "data": [
+        {
+            "id": "1",
+            "type": "article",
+            "attributes": {
+                "article_id": "50",
+                "author": "Johnson, T. L. G., C. B., Maes, S. E., Hojgaard, A., Fleshman, A., Boegler, K. A., Delory, M. J., Slater, K. S., Karpathy, S. E., Bjork, J. K., Neitzel, D. F., Schiffman, E. K., Eisen, R. J.,",
+                "title": "Prevalence and distribution of seven human pathogens in host-seeking Ixodes scapularis (Acari: Ixodidae) nymphs in Minnesota, USA",
+                "year": "2018",
+                "date": "20-07",
+                "isbn_issn": "1877-959x",
+                "keywords": "Anaplasmosis:Babesiosis:Coinfection:Density of infected nymphs (DIN):Lyme disease:Nymphal infection prevalence (NIP)",
+                "abstract": "In the north-central United States,...",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/30055987",
+                "doi": "10.1016/j.ttbdis.2018.07.009"
+            }
+        },
+        {...}
+    ]
+}
+
+
+
+```
+</details>
+
+- ### Disease Info
+<details close>
+<summary> Get Information for all Diseases </summary>
+<br>
+
+
+Request: <br>
+```
+GET /api/v1/disease_info
+```
+Example:
+[Get information for all diseases](https://epitrac-be.herokuapp.com/api/v1/disease_info)
+
+JSON Response Example:
+```json
+{
+    "data": [
+        {
+            "id": "1",
+            "type": "disease_info",
+            "attributes": {
+                "disease": "Anthrax",
+                "short_name": "Anthrax",
+                "information": "Anthrax is a serious infectious disease...",
+                "link": "https://www.cdc.gov/anthrax/"
+            }
+        },
+        {
+            "id": "2",
+            "type": "disease_info",
+            "attributes": {
+                "disease": "Arboviral diseases, Chikungunya virus disease",
+                "short_name": "Chikungunya",
+                "information": "Chikungunya virus is spread to people...",
+                "link": "https://www.cdc.gov/chikungunya/index.html"
+            }
+        },
+        {....}
+    ]
+}
+```
+</details>
+
+<details close>
+<summary> Get Information for One Disease </summary>
+<br>
+
+
+Request: <br>
+```
+GET /api/v1/disease_info?short_name=#{short_name}
+```
+Example:
+[Get Information for Anthrax](https://epitrac-be.herokuapp.com/api/v1/disease_info?short_name=anthrax)
+
+JSON Response Example:
+```json
+{
+    "data": [
+        {
+            "id": "1",
+            "type": "disease_info",
+            "attributes": {
+                "disease": "Anthrax",
+                "short_name": "Anthrax",
+                "information": "Anthrax is a serious infectious disease...",
+                "link": "https://www.cdc.gov/anthrax/"
+            }
+        }
+    ]
 }
 ```
 </details>

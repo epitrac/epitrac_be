@@ -11,8 +11,8 @@ RSpec.describe Disease, type: :model do
 
   describe '#partial_match' do 
     it 'disease can be a partial match and case insensitive' do 
-      disease_info = create(:disease, short_name: "Anthrax")
-      other_disease_info = create(:disease, short_name: "Syphilis")
+      disease_info = create(:disease, disease: "Anthrax")
+      other_disease_info = create(:disease, disease: "Syphilis")
 
       expect(Disease.partial_match("Anthr")[0]).to eq(disease_info)
       expect(Disease.partial_match("Anthr")[0]).to_not eq(other_disease_info)
