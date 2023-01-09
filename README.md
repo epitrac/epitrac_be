@@ -34,7 +34,7 @@ The back-end handles the project's API consumption and acts as the interface to 
 4. Setup the database: `rails db:create`
 
 ## Endpoints
-### Disease Cases
+- ### Disease Cases
 <details close>
 <summary>Get the Latest Week Disease Cases by State</summary>
 <br>
@@ -164,7 +164,7 @@ JSON Response Example:
 ```
 </details>
 
-### Articles
+- ### Articles
 <details close>
 
 <summary>Get Disease Articles</summary>
@@ -230,7 +230,7 @@ JSON Response Example:
 </details>
 
 <details close>
-<summary> Store an article to a user in the user_articles table </summary>
+<summary> Save an Article for a User </summary>
 <br>
 
 Request:
@@ -252,6 +252,26 @@ Response:
             "article_id": 88
         }
     }
+}
+```
+</details>
+
+<details close>
+<summary> Delete a Saved Article for a User </summary>
+<br>
+
+Request:
+**DELETE** `/api/v1/user_articles/:id`
+
+Headers: <br>
+```
+
+```
+
+Response:
+```json
+{
+    "message": "The article was successfully deleted from your dashboard"
 }
 ```
 </details>
