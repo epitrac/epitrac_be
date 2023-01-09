@@ -35,6 +35,9 @@ RSpec.describe 'endpoint to save an article to user dashboard' do
 
       saved_article = UserArticle.last
       expect(saved_article).to eq(nil)
+      message = JSON.parse(response.body, symbolize_names: true)[:message]
+
+      expect(message).to eq("The article was successfully deleted from your dashboard")
     end
 
     it 'an article cant be deleted if it doesnt exist' do
