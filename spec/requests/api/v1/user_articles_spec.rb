@@ -30,7 +30,7 @@ RSpec.describe 'endpoint to save an article to user dashboard' do
       UserArticle.create!(user_id: 2, article_id: 25)
       saved_article = UserArticle.last
       expect(saved_article.user_id).to eq(2)
-      # delete "/api/v1/user_articles/36?user_id=#{saved_article.user_id}&article_id=#{saved_article.article_id}"
+
       delete "/api/v1/user_articles/#{saved_article.id}"
 
       saved_article = UserArticle.last
@@ -57,9 +57,12 @@ RSpec.describe 'endpoint to save an article to user dashboard' do
       expect(response).to be_successful
       saved_articles = JSON.parse(response.body, symbolize_names: true)[:data]
       expect(saved_articles.count).to eq(2)
-      expect(saved_articles.pluck(:id)).to eq([article1.article_id.to_s, article2.article_id.to_s])
-      expect(saved_articles.pluck(:id)).to_not eq([article3.article_id.to_s])
 
+      expect(saved_articles.pluck(:id)).to eq([article1.id.to_s, article2.id.to_s])
+      expect(saved_articles.pluck(:attributes).pluck(:article_id)).to eq([article1.article_id.to_s, article2.article_id.to_s])
+
+      expect(saved_articles.pluck(:id)).to_not eq([article3.id.to_s])
+      expect(saved_articles.pluck(:attributes).pluck(:article_id)).to_not eq([article3.article_id.to_s])
     end
 
     it 'sad path, returns error without a user_id' do
@@ -67,8 +70,6 @@ RSpec.describe 'endpoint to save an article to user dashboard' do
       expect(response).to have_http_status 404
       errors = JSON.parse(response.body, symbolize_names: true)
       expect(errors[:error]).to eq("cannot find saved articles without a user id")
-
-
     end
   end
 end
