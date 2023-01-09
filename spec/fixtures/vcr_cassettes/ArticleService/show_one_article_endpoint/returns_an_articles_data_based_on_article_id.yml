@@ -21,7 +21,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Mon, 09 Jan 2023 15:57:07 GMT
+      - Mon, 09 Jan 2023 17:10:13 GMT
       Content-Type:
       - application/json;charset=utf-8
       Transfer-Encoding:
@@ -53,7 +53,7 @@ http_interactions:
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains
       X-Socrata-Requestid:
-      - 7b944d7c01157bfce1a4319d1f28374a
+      - 12e8799aba8b4f31b3838055081b1086
     body:
       encoding: ASCII-8BIT
       string: '[{"record_number":"1076","reference_type":"Generic","author":"de Oliveira,
@@ -108,5 +108,5 @@ http_interactions:
         Kansas, USA jim.bann@wichita.edu.","database_provider":"NLM","language":"eng","doi":"10.1128/mSphere.00556-19"}]
 
 '
-  recorded_at: Mon, 09 Jan 2023 15:57:07 GMT
+  recorded_at: Mon, 09 Jan 2023 17:10:13 GMT
 recorded_with: VCR 6.1.0

@@ -7,9 +7,11 @@ class UserArticleService
     JSON.parse(conn.get(url).body, symbolize_names: true)
   end
 
-  def self.articles_by_record(record_numbers)
-    record_numbers.map do |record_number|
-      get_url("?record_number=#{record_number}")
+  def self.articles_by_record(user_articles)
+    user_articles.map do |user_article|
+      json = get_url("?record_number=#{user_article[:article_id]}")
+      json[0][:id] = user_article[:id]
+      json
     end
   end
 end

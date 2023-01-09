@@ -21,7 +21,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Mon, 09 Jan 2023 15:57:06 GMT
+      - Mon, 09 Jan 2023 17:10:12 GMT
       Content-Type:
       - application/json;charset=utf-8
       Transfer-Encoding:
@@ -53,7 +53,7 @@ http_interactions:
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains
       X-Socrata-Requestid:
-      - f56b1442f196c5c6b9db3da3815722d7
+      - 7e709dfcf44dc8678e59474669a9aee0
     body:
       encoding: ASCII-8BIT
       string: '[{"record_number":"3","reference_type":"Generic","author":"Crepaz,
@@ -89,10 +89,10 @@ http_interactions:
         Atlanta, Georgia bICF International, Atlanta, Georgia.","database_provider":"NLM","language":"eng","doi":"10.1097/qad.0000000000001660"}]
 
 '
-  recorded_at: Mon, 09 Jan 2023 15:57:06 GMT
+  recorded_at: Mon, 09 Jan 2023 17:10:12 GMT
 - request:
     method: get
-    uri: https://data.cdc.gov/resource/biid-68vb.json?record_number=3
+    uri: https://data.cdc.gov/resource/biid-68vb.json?record_number=4
     body:
       encoding: US-ASCII
       string: ''
@@ -111,7 +111,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Mon, 09 Jan 2023 15:57:06 GMT
+      - Mon, 09 Jan 2023 17:10:13 GMT
       Content-Type:
       - application/json;charset=utf-8
       Transfer-Encoding:
@@ -121,7 +121,7 @@ http_interactions:
       Access-Control-Allow-Origin:
       - "*"
       Etag:
-      - '"YnJhdm8uNTAwNl8zXzQwOC1mUUlwXzFIdlAybS1QTEtqM2lSRF9YWjVXWQ---gzin4HAsfS-1knMoTlHm6VAATnElAF--gzip--gzip"'
+      - '"YnJhdm8uNTAwNl8zXzQwOFhjLVVjelRnSGlveHA5ckJDQTlvaU9UdVVCQQ---gziglJfGpZc-Gs8WE0iKeV-SjYICj5--gzip--gzip"'
       X-Soda2-Fields:
       - '["record_number","reference_type","author","year","title","secondary_author","secondary_title","publisher","volume","number_of_volumes","number","pages","section","tertiary_author","tertiary_title","edition","date","type_of_work","subsidiary_author","short_title","alternate_title","isbn_issn","original_publication","reprint_edition","reviewed_item","custom_1","custom_2","custom_3","custom_4","custom_5","custom_6","custom_7","custom_8","accession_number","call_number","label","keywords","abstract","notes","research_notes","url","author_address","figure","caption","access_date","translated_author","translated_title","name_of_database","database_provider","language","publisher_location","doi"]'
       X-Soda2-Types:
@@ -137,47 +137,66 @@ http_interactions:
       Vary:
       - Accept-Encoding
       Age:
-      - '0'
+      - '2'
       X-Socrata-Region:
       - aws-us-east-1-fedramp-prod
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains
       X-Socrata-Requestid:
-      - b6c16df8e4ffe5c728b5051d02b38e0f
+      - 8e2f5a90a4cf957b1d5c22730f0ec46f
     body:
       encoding: ASCII-8BIT
-      string: '[{"record_number":"3","reference_type":"Generic","author":"Crepaz,
-        N. T., T., Marks, G., Hall, H. I.,","year":"2017","title":"Changes in viral
-        suppression status among HIV patients receiving care: United States, 2014","secondary_title":"Aids","edition":"10/14/2017","date":"10-Dec","short_title":"Changes
-        in viral suppression status among HIV patients receiving care: United States,
-        2014","alternate_title":"AIDS (London, England)","isbn_issn":"0269-9370","custom_1":"Top
-        Articles of the Week","custom_2":"Communicable Diseases","custom_8":"9:43","accession_number":"29028661","abstract":"OBJECTIVE:
-        To examine changes in viral suppression status among HIV patients receiving
-        care in 2014 and the extent of viral suppression among persons with infrequent
-        care visits. METHODS: Using data reported to the National HIV Surveillance
-        System from 33 jurisdictions with complete reporting of CD4 and viral load
-        tests, we created four viral suppression status groups based on their first
-        and last viral loads in 2014: both suppressed, first unsuppressed and last
-        suppressed (improved), first suppressed and last unsuppressed (worsened),
-        and both unsuppressed. We also calculated the number and percentage of persons
-        whose sole viral load in 2014 was suppressed and had a suppressed viral load
-        at their last test in 2013. RESULTS: Among 339515 persons with at least two
-        viral load tests in 2014, 72.6% had all viral loads suppressed (durably suppressed);
-        75.5% had the first and last tests suppressed, 10.5% improved, 4.2% worsened,
-        and 9.9% had both unsuppressed. Among 92309 persons who had only one viral
-        load test in 2014, 69960 (75.8%) were suppressed and, of those, 53834 (76.9%)
-        also had a suppressed viral load at their last test in 2013. CONCLUSIONS:
-        National surveillance data show that the majority of patients in HIV care
-        during 2014 were durably suppressed. More showed improved compared to worsened
-        viral suppression status. Some patients who have less frequent care visits
-        have sustained viral suppression. Yet one in ten who were in regular care
-        did not have a suppressed viral load in 2014, indicating missed opportunities
-        for clinical interventions to help patients achieve and sustain viral suppression.","notes":"1473-5571:Crepaz,
-        Nicole:Tang, Tian:Marks, Gary:Hall, H Irene:Journal Article:England:AIDS.
-        2017 Oct 12. doi: 10.1097/QAD.0000000000001660.","url":"http://www.ncbi.nlm.nih.gov/pubmed/29028661","author_address":"aDivision
-        of HIV/AIDS Prevention, the U.S. Centers for Disease Control and Prevention,
-        Atlanta, Georgia bICF International, Atlanta, Georgia.","database_provider":"NLM","language":"eng","doi":"10.1097/qad.0000000000001660"}]
+      string: '[{"record_number":"4","reference_type":"Generic","author":"Auld, A.
+        F. V., Pelletier, Robin, E. G., Shiraishi, R. W., Dee, J., Antoine, M., Desir,
+        Y., Desforges, G., Delcher, C., Duval, N., Joseph, N., Francois, K., Griswold,
+        M., Domercant, J. W., Patrice Joseph, Y. A., Van Onacker, J. D., Deyde, V.,
+        Lowrance, D. W., And The Groupe d''Analyses, Salvh,","year":"2017","title":"Retention
+        throughout the HIV care and treatment cascade: from diagnosis to antiretroviral
+        treatment of adults and children living with HIV-Haiti, 1985-2015","secondary_title":"Am
+        J Trop Med Hyg","number_of_volumes":"97","pages":"4_Suppl","section":"57-70","edition":"10/25/2017","date":"Oct","short_title":"Retention
+        throughout the HIV care and treatment cascade: from diagnosis to antiretroviral
+        treatment of adults and children living with HIV-Haiti, 1985-2015","alternate_title":"The
+        American journal of tropical medicine and hygiene","isbn_issn":"0002-9637","custom_1":"Top
+        Articles of the Week","custom_2":"Communicable Diseases","custom_8":"9:44","accession_number":"29064357","abstract":"Monitoring
+        retention of people living with HIV (PLHIV) in the HIV care and treatment
+        cascade is essential to guide program strategy and evaluate progress toward
+        globally-endorsed 90-90-90 targets (i.e., 90% of PLHIV diagnosed, 81% on sustained
+        antiretroviral therapy (ART), and 73% virally suppressed). We describe national
+        retention from diagnosis throughout the cascade for patients receiving HIV
+        services in Haiti during 1985-2015, with a focus on those receiving HIV services
+        during 2008-2015. Among the 266,256 newly diagnosed PLHIV during 1985-2015,
+        49% were linked-to-care, 30% started ART, and 18% were retained on ART by
+        the time of database closure. Similarly, among the 192,187 newly diagnosed
+        HIV-positive patients during 2008-2015, 50% were linked to care, 31% started
+        ART, and 19% were retained on ART by the time of database closure. Most patients
+        (90-92%) at all cascade steps were adults (>/= 15 years old), among whom the
+        majority (60-61%) were female. During 2008-2015, outcomes varied significantly
+        across 42 administrative districts (arrondissements) of residence; cumulative
+        linkage-to-care ranged from 23% to 69%, cumulative ART initiation among care
+        enrollees ranged from 2% to 80%, and cumulative ART retention among ART enrollees
+        ranged from 30% to 88%. Compared with adults, children had lower cumulative
+        incidence of ART initiation among care enrollees (64% versus 47%) and lower
+        cumulative retention among ART enrollees (64% versus 50%). Cumulative linkage-to-care
+        was low and should be prioritized for improvement. Variations in outcomes
+        by arrondissement and between adults and children require further investigation
+        and programmatic response.","notes":"1476-1645:Auld, Andrew F:Valerie Pelletier:Robin,
+        Ermane G:Shiraishi, Ray W:Dee, Jacob:Antoine, Mayer:Desir, Yrvel:Desforges,
+        Gracia:Delcher, Chris:Duval, Nirva:Joseph, Nadjy:Francois, Kesner:Griswold,
+        Mark:Domercant, Jean Wysler:Patrice Joseph, Yves Anthony:Van Onacker, Joelle
+        Deas:Deyde, Varough:Lowrance, David W:And The Groupe d''Analyses Salvh:Journal
+        Article:United States:Am J Trop Med Hyg. 2017 Oct;97(4_Suppl):57-70. doi:
+        10.4269/ajtmh.17-0116.","url":"http://www.ncbi.nlm.nih.gov/pubmed/29064357/?otool=cdciclib","author_address":"Division
+        of Global HIV & Tuberculosis, Center for Global Health, Centers for Disease
+        Control and Prevention, Atlanta, Georgia.:Division of Global HIV & Tuberculosis,
+        Center for Global Health, Centers for Disease Control and Prevention, Port
+        au Prince, Haiti.:Programme National de Lutte contre le VIH/SIDA (National
+        AIDS Program), Ministere de la Sante Publique et de la Population (Ministry
+        of Health), Port au Prince, Haiti.:National Alliance of State and Territorial
+        AIDS Directors (NASTAD), Port-au-Prince, Haiti.:Department of Health Outcomes
+        and Policy, University of Florida, Gainesville, Florida.:National Alliance
+        of State and Territorial AIDS Directors (NASTAD), Washington, District of
+        Columbia.","name_of_database":"PubMed","database_provider":"NLM","language":"eng","doi":"10.4269/ajtmh.17-0116"}]
 
 '
-  recorded_at: Mon, 09 Jan 2023 15:57:06 GMT
+  recorded_at: Mon, 09 Jan 2023 17:10:13 GMT
 recorded_with: VCR 6.1.0
