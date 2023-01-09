@@ -137,35 +137,31 @@ Headers: <br>
 Response:
 ```json
 {
-    "data": [
+ "data": [
         {
-            "type": "articles",
-            "id": "1",
+            "id": "1076",
+            "type": "article",
             "attributes": {
-                "disease" : "anthrax",
-                "article_id" : "10.1371/journal.pone.0122004",
-                "journal" : "PLOS ONE",
-                "eissn" : "1932-6203",
-                "publication_date" : "2015-03-16T00:00:00Z",
-                "author_display" : ["Hiroshito Ogawa", "Daisuke Fujikura", "Miyuki Ohnuma"],
-                "abstract" : [ "Anthrax is an important zoonotic disease worldwide...."],
-                "title_display" : "A novel Multiplex PCR..."
-            }
-        },
-        {
-            "type": "articles",
-            "id": "2",
+                "id": "1076",
+                "author": "de Oliveira, F. F. M. M., S.;Gonti, S.;Brey, R. N.;Li, H.;Schiffer, J.;Casadevall, A.;Bann, J. G.",
+                "title": "Binding of the von Willebrand factor a domain of capillary morphogenesis protein 2 to anthrax protective antigen vaccine reduces immunogenicity in mice",
+                "year": "2020",
+                "date": "15-01",
+                "isbn_issn": "2379-5042",
+                "keywords": "anthrax:antigen processing:immunization:protein stability",
+                "abstract": "Protective antigen (PA)
+....
+....},
+{
+ "id": "1380",
+            "type": "article",
             "attributes": {
-                "disease" : "anthrax",
-                ...
-            }
-        },
-        {...},
-        {...},
-        ...
-        ...
-       ]
-}
+                "id": "1380",
+                "author": "Hupert, N. W., D.,  Cuomo, J.,  Hollingsworth, E.,  Neukermans, K.,  Xiong, W.,",
+                "title": "Predicting hospital surge after a large-scale anthrax attack: a model-based analysis of CDC's cities readiness initiative prophylaxis recommendations",
+                "year": "2009"
+.....}
+]
 ```
 </details>
 
