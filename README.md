@@ -193,6 +193,79 @@ Response:
 ```
 </details>
 
+<details close>
+<summary>Get a user's saved articles from user_aritcles table in back_end </summary>
+<br>
+
+Request:
+**GET** `/api/v1/user_articles?user_id=#{user_id}`
+
+Headers: <br>
+```
+
+```
+
+Response:
+```json
+{
+ "data": [
+        {
+            "id": "8",
+            "type": "article",
+            "attributes": {
+                "article_id": "4",
+                "author": "Auld, A. F. V., Pelletier, Robin, E. G., Shiraishi, R. W., Dee, J., Antoine, M., Desir, Y., Desforges, G., Delcher, C., Duval, N., Joseph, N., Francois, K., Griswold, M., Domercant, J. W., Patrice Joseph, Y. A., Van Onacker, J. D., Deyde, V., Lowrance, D. W., And The Groupe d'Analyses, Salvh,",
+                "title": "Retention throughout the HIV care...",
+                "year": "2017",
+                "date": "Oct",
+                "isbn_issn": "0002-9637",
+                "keywords": null,
+                "abstract": "Monitoring retention of people living with HIV (PLHIV) in the HIV care...",
+                "url": "http://www.ncbi.nlm.nih.gov/pubmed/29064357/?otool=cdciclib",
+                "doi": "10.4269/ajtmh.17-0116"
+            }
+        },
+        {
+            "id": "4",
+            "type": "article",
+            "attributes": {
+                "article_id": "3",
+                "author": "Crepaz, N. T., T., Marks, G., Hall, H. I.,",
+                "title": "...
+            }
+        }
+   ]
+}
+```
+</details>
+
+<details close>
+<summary> Store an article to a user in the user_articles table </summary>
+<br>
+
+Request:
+**POST** `/api/v1/user_articles?user_id=#{user_id}&article_id=#{article_id}`
+
+Headers: <br>
+```
+
+```
+
+Response:
+```json
+{
+ "data": {
+        "id": "10",
+        "type": "user_article",
+        "attributes": {
+            "user_id": 1,
+            "article_id": 88
+        }
+    }
+}
+```
+</details>
+
 ## Schema
 
 -WIP-
