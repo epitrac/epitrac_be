@@ -31,23 +31,25 @@ The back-end handles the project's API consumption and acts as the interface to 
 1. Clone the repository
 2. cd into the root directory
 3. Install gem packages: `bundle install`
-4. Setup the database: `rails db:create`
+4. Setup the database: `rails db:{drop,create,migrate}`
+5. Import [Disease Info](https://github.com/epitrac/epitrac_be/blob/main/db/data/nndss_diseases_info.csv) into diseases table: `rake csv_load:diseases`
+6. Run `rails c` and then `Disease.count`. You should have 109 diseases.
+7. You may run the RSpec test suite locally with `bundle exec rspec`
 
 ## Endpoints
+Back End Server: https://epitrac-be.herokuapp.com/
 - ### Disease Cases
 <details close>
 <summary>Get the Latest Week Disease Cases by State</summary>
 <br>
 
-Request:
-**GET** `/api/v1/disease_cases?state=#{state_name}`
 
 Returns a list of diseases in that state for the most recent MMWR week recorded in the [NNDSS Weekly Dataset](https://data.cdc.gov/NNDSS/NNDSS-Weekly-Data/x9gk-5huc).
 Data Sourced from the [NNDSS Weekly Data API](https://dev.socrata.com/foundry/data.cdc.gov/x9gk-5huc)
 
-Headers: <br>
+Request: <br>
 ```
-
+GET /api/v1/disease_cases?state=#{state_name}
 ```
 Example:
 [Get Disease Cases in Georgia](https://epitrac-be.herokuapp.com/api/v1/disease_cases?state=GEORGIA)
@@ -104,15 +106,14 @@ JSON Response Example:
 <summary>Get All Disease Cases for Current Week</summary>
 <br>
 
-Request:
-**GET** `/api/v1/disease_cases`
 
 Returns a list of diseases in all states for the most recent MMWR week recorded in the [NNDSS Weekly Dataset](https://data.cdc.gov/NNDSS/NNDSS-Weekly-Data/x9gk-5huc).
-Data Sourced from the [NNDSS Weekly Data API](https://dev.socrata.com/foundry/data.cdc.gov/x9gk-5huc)
 
-Headers: <br>
+Data Sourced from the [NNDSS Weekly Data API](https://dev.socrata.com/foundry/data.cdc.gov/x9gk-5huc).
+
+Request: <br>
 ```
-
+GET /api/v1/disease_cases
 ```
 Example: 
 [Get All Disease Cases For Latest Week](https://epitrac-be.herokuapp.com/api/v1/disease_cases)
@@ -167,19 +168,17 @@ JSON Response Example:
 - ### Articles
 <details close>
 
-<summary>Get Disease Articles</summary>
+<summary>Get Articles for a Disease</summary>
 <br>
 
-Request:
-**GET** `/api/v1/articles?disease=#{disease}`
 
 Returns a list of articles related to that disease.
 
-Data sourced from [Science Clips](https://dev.socrata.com/foundry/data.cdc.gov/biid-68vb)
+Data sourced from [Science Clips](https://dev.socrata.com/foundry/data.cdc.gov/biid-68vb).
 
-Headers: <br>
+Request: <br>
 ```
-
+GET /api/v1/articles?disease=#{disease}
 ```
 Example: 
 [Get Articles Related to Anthrax](https://epitrac-be.herokuapp.com/api/v1/articles?disease=anthrax)
@@ -233,15 +232,12 @@ JSON Response Example:
 <summary> Save an Article for a User </summary>
 <br>
 
-Request:
-**POST** `/api/v1/user_articles?user_id=#{user_id}&article_id=#{article_id}`
-
-Headers: <br>
+Request: <br>
+```
+POST /api/v1/user_articles?user_id=#{user_id}&article_id=#{article_id}
 ```
 
-```
-
-Response:
+JSON Response Example:
 ```json
 {
  "data": {
@@ -260,18 +256,128 @@ Response:
 <summary> Delete a Saved Article for a User </summary>
 <br>
 
-Request:
-**DELETE** `/api/v1/user_articles/:id`
-
-Headers: <br>
+Request: <br>
+```
+DELETE /api/v1/user_articles/:id
 ```
 
-```
-
-Response:
+JSON Response Example:
 ```json
 {
     "message": "The article was successfully deleted from your dashboard"
+}
+```
+</details>
+
+<details close>
+<summary> Get a Users Saved Articles </summary>
+<br>
+
+
+Request: <br>
+```
+GET /api/v1/user_articles/?user_id=#{user_id}
+```
+
+JSON Response Example:
+```json
+{
+    "data": [
+        {
+            "id": "1",
+            "type": "article",
+            "attributes": {
+                "article_id": "50",
+                "author": "Johnson, T. L. G., C. B., Maes, S. E., Hojgaard, A., Fleshman, A., Boegler, K. A., Delory, M. J., Slater, K. S., Karpathy, S. E., Bjork, J. K., Neitzel, D. F., Schiffman, E. K., Eisen, R. J.,",
+                "title": "Prevalence and distribution of seven human pathogens in host-seeking Ixodes scapularis (Acari: Ixodidae) nymphs in Minnesota, USA",
+                "year": "2018",
+                "date": "20-07",
+                "isbn_issn": "1877-959x",
+                "keywords": "Anaplasmosis:Babesiosis:Coinfection:Density of infected nymphs (DIN):Lyme disease:Nymphal infection prevalence (NIP)",
+                "abstract": "In the north-central United States,...",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/30055987",
+                "doi": "10.1016/j.ttbdis.2018.07.009"
+            }
+        },
+        {...}
+    ]
+}
+
+
+
+```
+</details>
+
+- ### Disease Info
+<details close>
+<summary> Get Information for all Diseases </summary>
+<br>
+
+
+Request: <br>
+```
+GET /api/v1/disease_info
+```
+Example:
+[Get information for all diseases](https://epitrac-be.herokuapp.com/api/v1/disease_info)
+
+JSON Response Example:
+```json
+{
+    "data": [
+        {
+            "id": "1",
+            "type": "disease_info",
+            "attributes": {
+                "disease": "Anthrax",
+                "short_name": "Anthrax",
+                "information": "Anthrax is a serious infectious disease...",
+                "link": "https://www.cdc.gov/anthrax/"
+            }
+        },
+        {
+            "id": "2",
+            "type": "disease_info",
+            "attributes": {
+                "disease": "Arboviral diseases, Chikungunya virus disease",
+                "short_name": "Chikungunya",
+                "information": "Chikungunya virus is spread to people...",
+                "link": "https://www.cdc.gov/chikungunya/index.html"
+            }
+        },
+        {....}
+    ]
+}
+```
+</details>
+
+<details close>
+<summary> Get Information for One Disease </summary>
+<br>
+
+
+Request: <br>
+```
+GET /api/v1/disease_info?short_name=#{short_name}
+```
+Example:
+[Get Information for Anthrax](https://epitrac-be.herokuapp.com/api/v1/disease_info?short_name=anthrax)
+
+JSON Response Example:
+```json
+{
+    "data": [
+        {
+            "id": "1",
+            "type": "disease_info",
+            "attributes": {
+                "disease": "Anthrax",
+                "short_name": "Anthrax",
+                "information": "Anthrax is a serious infectious disease...",
+                "link": "https://www.cdc.gov/anthrax/"
+            }
+        }
+    ]
 }
 ```
 </details>
