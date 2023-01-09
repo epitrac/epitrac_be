@@ -1,7 +1,7 @@
 class Api::V1::DiseaseInfoController < ApplicationController
   def index
-    if params[:short_name]
-      diseases = Disease.partial_match(params[:short_name])
+    if params[:disease]
+      diseases = Disease.partial_match(params[:disease])
       render json: DiseaseInfoSerializer.new(diseases)
     else
       render json: DiseaseInfoSerializer.new(Disease.all)
