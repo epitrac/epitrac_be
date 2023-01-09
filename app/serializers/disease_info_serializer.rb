@@ -1,4 +1,4 @@
 class DiseaseInfoSerializer
   include JSONAPI::Serializer
-  attributes :disease, :information, :link
+  attributes :disease, :short_name, :information, :link
 end
