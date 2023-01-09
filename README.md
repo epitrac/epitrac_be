@@ -358,10 +358,10 @@ JSON Response Example:
 
 Request: <br>
 ```
-GET /api/v1/disease_info?short_name=#{short_name}
+GET /api/v1/disease_info?disease=#{disease}
 ```
 Example:
-[Get Information for Anthrax](https://epitrac-be.herokuapp.com/api/v1/disease_info?short_name=anthrax)
+[Get Information for Anthrax](https://epitrac-be.herokuapp.com/api/v1/disease_info?disease=anthrax)
 
 JSON Response Example:
 ```json
