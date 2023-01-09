@@ -187,7 +187,7 @@ Example:
 JSON Response Example:
 ```json
 {
-    "data": [
+ "data": [
         {
             "id": "1076",
             "type": "article",
@@ -225,6 +225,33 @@ JSON Response Example:
         ...
         ...
       ]
+}
+```
+</details>
+
+<details close>
+<summary> Store an article to a user in the user_articles table </summary>
+<br>
+
+Request:
+**POST** `/api/v1/user_articles?user_id=#{user_id}&article_id=#{article_id}`
+
+Headers: <br>
+```
+
+```
+
+Response:
+```json
+{
+ "data": {
+        "id": "10",
+        "type": "user_article",
+        "attributes": {
+            "user_id": 1,
+            "article_id": 88
+        }
+    }
 }
 ```
 </details>
