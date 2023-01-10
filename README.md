@@ -420,16 +420,16 @@ JSON Response Example:
 </table>
 
 ## Gems
-- Pry
-- rspec
-- capybara
-- simplecov
-- shoulda-matchers
-- webmock
-- vcr
-- faraday
-- faker
-- factorybot
+- [pry](https://github.com/pry/pry)
+- [rspec-rails](https://github.com/rspec/rspec-rails)
+- [capybara](https://github.com/teamcapybara/capybara)
+- [simplecov](https://github.com/simplecov-ruby/simplecov)
+- [shoulda-matchers](https://github.com/thoughtbot/shoulda-matchers)
+- [webmock](https://github.com/bblimke/webmock)
+- [vcr](https://github.com/vcr/vcr)
+- [faraday](https://lostisland.github.io/faraday/usage/)
+- [faker](https://github.com/vajradog/faker-rails)
+- [factory_bot_rails](https://github.com/thoughtbot/factory_bot_rails)
 
 ## Known Issues/Future Goals
 Future features could include:
