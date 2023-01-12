@@ -41,7 +41,12 @@ The back-end handles the project's API consumption and acts as the interface to 
 6. Run `rails c` and then `Disease.count`. You should have 109 diseases.
 7. You may run the RSpec test suite locally with `bundle exec rspec`
 
-## Endpoints
+## APIs
+Available endpoints:
+
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://god.gw.postman.com/run-collection/24609974-f8181aac-9ff7-47af-8cc7-8327e8ef5773?action=collection%2Ffork&collection-url=entityId%3D24609974-f8181aac-9ff7-47af-8cc7-8327e8ef5773%26entityType%3Dcollection%26workspaceId%3Ddeeca8bb-73db-4695-9e91-f4f93a443f2b)
+
+
 Back End Server: https://epitrac-be.herokuapp.com/
 - ### Disease Cases
 <details close>
