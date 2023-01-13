@@ -2,6 +2,7 @@ class Article
   attr_reader :id,
               :article_id,
               :author,
+              :journal,
               :title,
               :year,
               :date,
@@ -20,6 +21,7 @@ class Article
     end
     @article_id = attributes[:record_number]
     @author = attributes[:author]
+    @journal = attributes[:secondary_title]
     @title = attributes[:title]
     @year = attributes[:year]
     @date = attributes[:date]
