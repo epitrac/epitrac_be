@@ -13,4 +13,9 @@ RSpec.describe ArticleFacade do
     expect(articles[0].doi).to eq("10.1128/mSphere.00556-19")
     expect(articles[0].author).to eq("de Oliveira, F. F. M. M., S.;Gonti, S.;Brey, R. N.;Li, H.;Schiffer, J.;Casadevall, A.;Bann, J. G.")
   end
+
+  it 'returns an empty array if disease has no articles', :vcr do 
+    articles = ArticleFacade.articles("hansen's")
+    expect(articles).to eq([])
+  end
 end

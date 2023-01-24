@@ -1,0 +1,56 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://data.cdc.gov/resource/biid-68vb.json?$where=title%20like%20%27%25hansen%27s%25%27
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 24 Jan 2023 21:27:28 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - private, no-cache, must-revalidate
+      Age:
+      - '0'
+      X-Socrata-Region:
+      - aws-us-east-1-fedramp-prod
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      X-Socrata-Requestid:
+      - c34a75e9518bb1e3bbd7083fc2352e89
+    body:
+      encoding: UTF-8
+      string: |
+        {
+          "code" : "query.compiler.malformed",
+          "error" : true,
+          "message" : "Could not parse SoQL query \"select * where title like '%hansen's%'\" at line 1 character 36: Expected one of end of input, `MINUS ALL', `INTERSECT ALL', `UNION ALL', `MINUS', `INTERSECT', `UNION', `|>', `OFFSET', `LIMIT', `SEARCH', `ORDER BY', `HAVING', or `GROUP BY', but got `s'",
+          "data" : {
+            "query" : "select * where title like '%hansen's%'",
+            "position" : { }
+          }
+        }
+  recorded_at: Tue, 24 Jan 2023 21:27:27 GMT
+recorded_with: VCR 6.1.0
