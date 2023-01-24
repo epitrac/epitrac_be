@@ -24,7 +24,7 @@ This repo is the Back End part of a project built by students at [Turing School 
 ## Learning Goals
 [Project Spec](https://backend.turing.edu/module3/projects/consultancy/)
 
-This project's goal is creating a successful web application from a student-led project idea, focusing on Service-Oriented Architecture with a separate front and back end.
+This project's goal is to create a successful web application from a student-led project idea, focusing on Service-Oriented Architecture with a separate front and back end.
 The back-end handles the project's API consumption and acts as the interface to the project's database.
 
 ## Built With
