@@ -1,20 +1,21 @@
 <div align="center">
-  <h1>Epitrac API</h1>
-  <h1>-WIP-</h1>
+  <h1>EpiTrac API</h1>
+  <img width="500" alt="Covid virus" src="https://user-images.githubusercontent.com/60988144/211962791-a35a0709-52af-493a-bfaf-e10b88db5738.jpg">
 </div>
 
 ## Table of Contents
 - [Project Overview](#project-overview)
 - [Learning Goals](#learning-goals)
+- [Built With](#built-with)
 - [Setup](#setup)
 - [Endpoints](#endpoints)
-- [Schema](#schema)
 - [Contributors](#contributors)
 - [Gems](#gems)
+- [Schema](#schema)
 
 
 ## Project Overview
-Epitrac is an application that aims to solve the problem of the general public not having user-friendly access to epidemiological data by creating a user friendly interactive map to display weekly disease cases and view disease related articles.
+EpiTrac is an application that aims to with a user-friendly tool to access epidemiological data with an interactive map to display weekly disease cases and view disease related articles.
 
 This repo is the Back End part of a project built by students at [Turing School of Software and Design](https://turing.edu/). You can find the Front End repo [HERE](https://github.com/epitrac/epitrac_fe).
 
@@ -25,6 +26,10 @@ This repo is the Back End part of a project built by students at [Turing School 
 
 This project's goal is creating a successful web application from a student-led project idea, focusing on Service-Oriented Architecture with a separate front and back end.
 The back-end handles the project's API consumption and acts as the interface to the project's database.
+
+## Built With
+- Rails 5.2.8
+- Ruby 2.7.4
 
 ## Setup
 
@@ -387,10 +392,6 @@ JSON Response Example:
 ```
 </details>
 
-## Schema
-
--WIP-
-
 ## Contributors
 <table>
   <tr>
@@ -425,17 +426,20 @@ JSON Response Example:
 </table>
 
 ## Gems
-- [pry](https://github.com/pry/pry)
-- [rspec-rails](https://github.com/rspec/rspec-rails)
-- [capybara](https://github.com/teamcapybara/capybara)
-- [simplecov](https://github.com/simplecov-ruby/simplecov)
-- [shoulda-matchers](https://github.com/thoughtbot/shoulda-matchers)
-- [webmock](https://github.com/bblimke/webmock)
-- [vcr](https://github.com/vcr/vcr)
-- [faraday](https://lostisland.github.io/faraday/usage/)
-- [faker](https://github.com/vajradog/faker-rails)
-- [factory_bot_rails](https://github.com/thoughtbot/factory_bot_rails)
+- [Pry](https://github.com/pry/pry)
+- [RSpec-rails](https://github.com/rspec/rspec-rails)
+- [Capybara](https://github.com/teamcapybara/capybara)
+- [SimpleCov](https://github.com/simplecov-ruby/simplecov)
+- [Shoulda-Matchers](https://github.com/thoughtbot/shoulda-matchers)
+- [Webmock](https://github.com/bblimke/webmock)
+- [VCR](https://github.com/vcr/vcr)
+- [Faraday](https://lostisland.github.io/faraday/usage/)
+- [Faker](https://github.com/vajradog/faker-rails)
+- [Factory Bot](https://github.com/thoughtbot/factory_bot_rails)
+
+## Schema
+![Screen Shot 2023-01-11 at 10 08 15 PM](https://user-images.githubusercontent.com/60988144/211966702-9debd7ad-280e-4525-befc-b94ef2eb4ad8.png)
 
 ## Known Issues/Future Goals
 Future features could include:
-- WIP
+- Delete all articles endpoint
