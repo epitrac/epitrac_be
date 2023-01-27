@@ -61,4 +61,17 @@ RSpec.describe 'articles endpoint' do
     expect(message).to eq("All articles were deleted for this user")
   end
 
+  it 'returns an error and status 404 if a user tries to delete all articles but there arent any', :vcr do 
+    user_id = 3 
+    delete "/api/v1/articles/3"
+    expect(response).to have_http_status 404
+
+    expect(UserArticle.where(user_id: 3)).to eq([])
+    message = JSON.parse(response.body, symbolize_names: true)[:message]
+
+    expect(message).to eq("There are no saved articles for this user")
+
+
+  end
+
 end
