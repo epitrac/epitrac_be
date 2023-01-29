@@ -20,6 +20,16 @@ class Api::V1::UserArticlesController < ApplicationController
     end
   end
 
+  def destroy_all  
+    articles = UserArticle.where(params[:id])
+    if articles != []
+      UserArticle.delete(articles) 
+      render json: {message: "All articles were deleted for this user"}
+    else 
+      render json: {message: "There are no saved articles for this user"}, status: 404
+    end
+  end
+
 private
   def user_article_params
     params.permit(:user_id, :article_id)

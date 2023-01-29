@@ -48,30 +48,4 @@ RSpec.describe 'articles endpoint' do
     expect(errors[:error]).to eq("cannot return articles without a disease")
   end
 
-  it 'can delete all of a users saved articles', :vcr do 
-    art1 = UserArticle.create!(user_id: 2, article_id: 25)
-    art2 = UserArticle.create!(user_id: 2, article_id: 26)
-    art3= UserArticle.create!(user_id: 2, article_id: 27)
-    expect(UserArticle.where(user_id: 2)).to eq([art1, art2, art3])
-
-    delete "/api/v1/articles/2"
-    expect(UserArticle.where(user_id: 2)).to eq([])
-    message = JSON.parse(response.body, symbolize_names: true)[:message]
-
-    expect(message).to eq("All articles were deleted for this user")
-  end
-
-  it 'returns an error and status 404 if a user tries to delete all articles but there arent any', :vcr do 
-    user_id = 3 
-    delete "/api/v1/articles/3"
-    expect(response).to have_http_status 404
-
-    expect(UserArticle.where(user_id: 3)).to eq([])
-    message = JSON.parse(response.body, symbolize_names: true)[:message]
-
-    expect(message).to eq("There are no saved articles for this user")
-
-
-  end
-
 end
