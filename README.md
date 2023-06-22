@@ -15,7 +15,7 @@
 
 
 ## Project Overview
-EpiTrac is an application that aims to with a user-friendly tool to access epidemiological data with an interactive map to display weekly disease cases and view disease related articles.
+EpiTrac is an interactive public health application that enables users to view weekly notifiable disease counts by state as well as relevant articles and information for each disease. 
 
 This repo is the Back End part of a project built by students at [Turing School of Software and Design](https://turing.edu/). You can find the Front End repo [HERE](https://github.com/epitrac/epitrac_fe).
 
@@ -24,7 +24,7 @@ This repo is the Back End part of a project built by students at [Turing School 
 ## Learning Goals
 [Project Spec](https://backend.turing.edu/module3/projects/consultancy/)
 
-This project's goal is creating a successful web application from a student-led project idea, focusing on Service-Oriented Architecture with a separate front and back end.
+This project's goal is to create a successful web application from a student-led project idea, focusing on Service-Oriented Architecture with a separate front and back end.
 The back-end handles the project's API consumption and acts as the interface to the project's database.
 
 ## Built With
@@ -41,14 +41,14 @@ The back-end handles the project's API consumption and acts as the interface to 
 6. Run `rails c` and then `Disease.count`. You should have 109 diseases.
 7. You may run the RSpec test suite locally with `bundle exec rspec`
 
-## APIs
+## Endpoints
 Available endpoints:
 
 [![Run in Postman](https://run.pstmn.io/button.svg)](https://god.gw.postman.com/run-collection/24609974-f8181aac-9ff7-47af-8cc7-8327e8ef5773?action=collection%2Ffork&collection-url=entityId%3D24609974-f8181aac-9ff7-47af-8cc7-8327e8ef5773%26entityType%3Dcollection%26workspaceId%3Ddeeca8bb-73db-4695-9e91-f4f93a443f2b)
 
 
 Back End Server: https://epitrac-be.herokuapp.com/
-- ### Disease Cases
+### Disease Cases
 <details close>
 <summary>Get the Latest Week Disease Cases by State</summary>
 <br>
@@ -175,7 +175,7 @@ JSON Response Example:
 ```
 </details>
 
-- ### Articles
+### Articles
 <details close>
 
 <summary>Get Articles for a Disease</summary>
@@ -318,7 +318,7 @@ JSON Response Example:
 ```
 </details>
 
-- ### Disease Info
+### Disease Info
 <details close>
 <summary> Get Information for all Diseases </summary>
 <br>

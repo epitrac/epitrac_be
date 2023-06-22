@@ -17,6 +17,7 @@ RSpec.describe DiseaseCaseFacade do
         expect(facade[0].state).to_not eq("COLORADO")
         
         expect(facade[0].current_week).to eq(52)
+
         expect(facade[0].disease).to eq("Anthrax")
         expect(facade[0].current_week_cases).to eq(0)
       end

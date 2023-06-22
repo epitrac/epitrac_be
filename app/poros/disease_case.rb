@@ -19,8 +19,4 @@ class DiseaseCase
     @cumulative_last = attributes[:m4].to_i 
     @coordinates = attributes[:geocode][:coordinates] if attributes[:geocode]
   end
-
-  # def self.all
-  #   ObjectSpace.each_object(self).to_a
-  # end
 end

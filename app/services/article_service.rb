@@ -13,7 +13,5 @@ class ArticleService
 
   def self.one_article(article_id)
     get_url("?record_number=#{article_id}")
-
   end
-
 end

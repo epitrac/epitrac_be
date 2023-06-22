@@ -6,6 +6,7 @@ Rails.application.routes.draw do
       resources :articles, only: [:index]
       resources :disease_info, only: [:index]
       resources :user_articles, only: [:index, :create, :destroy]
+      delete "user/user_articles/:user_id", to: "user_articles#destroy_all"
     end
   end
 end
