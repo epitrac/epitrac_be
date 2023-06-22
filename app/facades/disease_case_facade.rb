@@ -10,8 +10,9 @@ class DiseaseCaseFacade
   end
 
   def self.states_diseases(state)
-    DiseaseCaseService.diseases_by_state(state).map do |row|
+    diseases = DiseaseCaseService.diseases_by_state(state).map do |row|
       DiseaseCase.new(row)
     end
+    diseases
   end
 end
